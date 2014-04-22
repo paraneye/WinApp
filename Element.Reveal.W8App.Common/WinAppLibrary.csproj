@@ -401,29 +401,6 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="SharpDX">
-      <HintPath>..\..\..\Win8_Apps_ReferenceDLL\SharpDX.dll</HintPath>
-    </Reference>
-    <Reference Include="SharpDX.Direct2D1">
-      <HintPath>..\..\..\Win8_Apps_ReferenceDLL\SharpDX.Direct2D1.dll</HintPath>
-    </Reference>
-    <Reference Include="SharpDX.DXGI">
-      <HintPath>..\..\..\Win8_Apps_ReferenceDLL\SharpDX.DXGI.dll</HintPath>
-    </Reference>
-    <Reference Include="WinAppLibraryEx">
-      <HintPath>..\..\..\Win8_Apps_ReferenceDLL\WinAppLibraryEx.dll</HintPath>
-    </Reference>
-    <Reference Include="WinRTXamlToolkit">
-      <HintPath>..\..\..\Win8_Apps_ReferenceDLL\WinRTXamlToolkit.dll</HintPath>
-    </Reference>
-    <Reference Include="WinRTXamlToolkit.Composition">
-      <HintPath>..\..\..\Win8_Apps_ReferenceDLL\WinRTXamlToolkit.Composition.dll</HintPath>
-    </Reference>
-    <Reference Include="WriteableBitmapEx.WinRT">
-      <HintPath>..\..\..\Win8_Apps_ReferenceDLL\WriteableBitmapEx.WinRT.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -434,6 +411,29 @@
       <Project>{28800864-79a5-4151-bf2c-320d7e3e2190}</Project>
       <Name>Element.Reveal.DataLibrary</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="SharpDX">
+      <HintPath>..\..\Win8_Apps_ReferenceDLL\SharpDX.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.Direct2D1">
+      <HintPath>..\..\Win8_Apps_ReferenceDLL\SharpDX.Direct2D1.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.DXGI">
+      <HintPath>..\..\Win8_Apps_ReferenceDLL\SharpDX.DXGI.dll</HintPath>
+    </Reference>
+    <Reference Include="WinAppLibraryEx">
+      <HintPath>..\..\Win8_Apps_ReferenceDLL\WinAppLibraryEx.dll</HintPath>
+    </Reference>
+    <Reference Include="WinRTXamlToolkit">
+      <HintPath>..\..\Win8_Apps_ReferenceDLL\WinRTXamlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="WinRTXamlToolkit.Composition">
+      <HintPath>..\..\Win8_Apps_ReferenceDLL\WinRTXamlToolkit.Composition.dll</HintPath>
+    </Reference>
+    <Reference Include="WriteableBitmapEx.WinRT">
+      <HintPath>..\..\Win8_Apps_ReferenceDLL\WriteableBitmapEx.WinRT.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '11.0' ">
     <VisualStudioVersion>11.0</VisualStudioVersion>

@@ -1337,24 +1337,27 @@
   <ItemGroup>
     <Reference Include="C1.Xaml, Version=8.0.20132.342, Culture=neutral, PublicKeyToken=2aa4ec5576d6c3ce, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Win8_Apps_ReferenceDLL\C1.Xaml.dll</HintPath>
+      <HintPath>..\..\Win8_Apps_ReferenceDLL\C1.Xaml.dll</HintPath>
     </Reference>
     <Reference Include="C1.Xaml.DateTimeEditors, Version=8.0.20132.342, Culture=neutral, PublicKeyToken=2aa4ec5576d6c3ce, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Win8_Apps_ReferenceDLL\C1.Xaml.DateTimeEditors.dll</HintPath>
+      <HintPath>..\..\Win8_Apps_ReferenceDLL\C1.Xaml.DateTimeEditors.dll</HintPath>
     </Reference>
     <Reference Include="C1.Xaml.PdfViewer, Version=8.0.20132.342, Culture=neutral, PublicKeyToken=2aa4ec5576d6c3ce, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Win8_Apps_ReferenceDLL\C1.Xaml.PdfViewer.dll</HintPath>
+      <HintPath>..\..\Win8_Apps_ReferenceDLL\C1.Xaml.PdfViewer.dll</HintPath>
     </Reference>
-    <Reference Include="DlhSoft.ProjectData.GanttChart.WinRT.Controls">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\DlhSoft\Gantt Chart Modern Library 5.0.16\DlhSoft.ProjectData.GanttChart.WinRT.Controls.dll</HintPath>
+    <Reference Include="DlhSoft.ProjectData.GanttChart.WinRT.Controls, Version=5.0.16.0, Culture=neutral, PublicKeyToken=6071b28da0134838, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Win8_Apps_ReferenceDLL\DlhSoft.ProjectData.GanttChart.WinRT.Controls.dll</HintPath>
     </Reference>
-    <Reference Include="oz">
-      <HintPath>..\..\..\Win8_Apps_ReferenceDLL\ozrv\x86\oz.winmd</HintPath>
+    <Reference Include="oz, Version=255.255.255.255, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Win8_Apps_ReferenceDLL\ozrv\x86\oz.winmd</HintPath>
     </Reference>
-    <Reference Include="OZWRTManagedRuntime">
-      <HintPath>..\..\..\Win8_Apps_ReferenceDLL\ozrv\x86\OZWRTManagedRuntime.winmd</HintPath>
+    <Reference Include="OZWRTManagedRuntime, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Win8_Apps_ReferenceDLL\ozrv\x86\OZWRTManagedRuntime.winmd</HintPath>
     </Reference>
     <Reference Include="SharpDX">
       <HintPath>\\ELEMENT-FILE\Software\SharedData\Software Development\Reference\Win8 Apps\SharpDX.dll</HintPath>
@@ -1362,11 +1365,13 @@
     <Reference Include="SharpDX.DXGI">
       <HintPath>\\ELEMENT-FILE\Software\SharedData\Software Development\Reference\Win8 Apps\SharpDX.DXGI.dll</HintPath>
     </Reference>
-    <Reference Include="WinRTXamlToolkit">
-      <HintPath>\\ELEMENT-FILE\Software\SharedData\Software Development\Reference\Win8 Apps\WinRTXamlToolkit.dll</HintPath>
+    <Reference Include="WinRTXamlToolkit, Version=1.3.5.2, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Win8_Apps_ReferenceDLL\WinRTXamlToolkit.dll</HintPath>
     </Reference>
-    <Reference Include="WinRTXamlToolkit.Composition">
-      <HintPath>\\ELEMENT-FILE\Software\SharedData\Software Development\Reference\Win8 Apps\WinRTXamlToolkit.Composition.dll</HintPath>
+    <Reference Include="WinRTXamlToolkit.Composition, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Win8_Apps_ReferenceDLL\WinRTXamlToolkit.Composition.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
