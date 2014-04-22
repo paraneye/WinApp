@@ -1,0 +1,143 @@
+﻿<UserControl
+    x:Class="Element.Reveal.Meg.Discipline.ITR.UCPipeCleaning"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    xmlns:control="using:WinAppLibrary.Controls"
+    xmlns:appui="using:WinAppLibrary.UI"
+    xmlns:c1="using:C1.Xaml.DateTimeEditors"
+    xmlns:Xaml="using:C1.Xaml"
+    Height="600"
+    Width="1450">
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="46"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="400"/>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Row="0" Grid.Column="0" VerticalAlignment="Top" Height="32">
+            <TextBlock TextWrapping="Wrap" FontSize="26"  Text="System Infomation" Foreground="#fff" FontFamily="Segoe UI light"/>
+        </StackPanel>
+        <Grid VerticalAlignment="Top" Grid.Row="1" Grid.Column="0" Height="550">
+            <Grid.Background>
+                <SolidColorBrush Color="Black" Opacity="0.5" />
+            </Grid.Background>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="41"/>
+                <RowDefinition Height="41"/>
+                <RowDefinition Height="41"/>
+                <RowDefinition Height="41"/>
+                <RowDefinition Height="41"/>
+                <RowDefinition Height="41"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="280"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Grid.Row="0" Margin="5" VerticalAlignment="Center" FontSize="15" Foreground="#7b91a2" FontFamily="Segoe UI Regular" Text="System Number"/>
+            <TextBlock x:Name="SystemNumber" Grid.ColumnSpan="3" Grid.Column="1" Grid.Row="0" Margin="5" FontSize="15" Foreground="#fff" FontFamily="Segoe UI Regular" />
+            <TextBlock Grid.Column="0" Grid.Row="1" Margin="5" VerticalAlignment="Center" FontSize="15" Foreground="#7b91a2" FontFamily="Segoe UI Regular" Text="Equipment Description"/>
+            <TextBox x:Name="txtEqDesc" Grid.ColumnSpan="3" Grid.Column="1" Grid.Row="1" Margin="5" FontSize="15" Foreground="#fff" FontFamily="Segoe UI Regular"/>
+            <TextBlock Grid.Column="0" Grid.Row="2" Margin="5" VerticalAlignment="Center" FontSize="15" Foreground="#7b91a2" FontFamily="Segoe UI Regular" Text="Tag Number"/>
+            <TextBox x:Name="txtTagNumber" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="2" Margin="5" FontSize="15" Foreground="#fff" FontFamily="Segoe UI Regular"/>
+            <TextBlock Grid.Column="0" Grid.Row="3" Margin="5" VerticalAlignment="Center" FontSize="15" Foreground="#7b91a2" FontFamily="Segoe UI Regular" Text="Test Package Number / Line Numbers"/>
+            <TextBox x:Name="txtTestPackNum" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="3" Margin="5" FontSize="15" Foreground="#fff" FontFamily="Segoe UI Regular"/>
+            <StackPanel Grid.ColumnSpan="2" Grid.Row="4" Background="#000" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                <TextBlock FontSize="15" Foreground="#92d050" FontFamily="Segoe UI Regular" Text="Location" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+            </StackPanel>
+            <StackPanel Grid.ColumnSpan="2" Grid.Row="5" VerticalAlignment="Stretch" HorizontalAlignment="Center" Orientation="Horizontal">
+                <RadioButton x:Name="rdoShop" DataContext="{Binding Shop}" GroupName="loc" Margin="0, 0, 30, 0">Shop</RadioButton>
+                <RadioButton x:Name="rdoField" DataContext="{Binding Field}" GroupName="loc">Field</RadioButton>
+            </StackPanel>
+
+        </Grid>
+        
+        <StackPanel Grid.Row="0" Grid.Column="2" VerticalAlignment="Top" Height="32">
+            <TextBlock TextWrapping="Wrap" FontSize="26"  Text="Activity Completed and Accepted" Foreground="#fff" FontFamily="Segoe UI light"/>
+        </StackPanel>
+        <Grid Grid.Row="1" Grid.Column="2" VerticalAlignment="Top">
+            <Grid.Background>
+                <SolidColorBrush Color="Black" Opacity="0.5" />
+            </Grid.Background>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid Height="550">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="25"/>
+                    <RowDefinition Height="68"/>
+                    <RowDefinition Height="68"/>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="68"/>
+                    <RowDefinition Height="68"/>
+                    <RowDefinition Height="68"/>
+                    <RowDefinition Height="68"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="120"></ColumnDefinition>
+                    <ColumnDefinition Width="120"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Grid.Row="0" FontSize="15" Foreground="#fff" FontFamily="Segoe UI Regular"  Text="Index" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+                <TextBlock Grid.Column="2" Grid.Row="0" FontSize="15" Foreground="#fff" FontFamily="Segoe UI Regular"  Text="CONTRACTOR" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                <TextBlock Grid.Column="3" Grid.Row="0" FontSize="15" Foreground="#fff" FontFamily="Segoe UI Regular"  Text="MEG" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+                <Image Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Source="\Assets\ITR\common_bul_01.png" Width="20" Height="20"></Image>
+                <Image Grid.Column="0" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center" Source="\Assets\ITR\common_bul_02.png" Width="20" Height="20"></Image>
+                <Image Grid.Column="0" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Center" Source="\Assets\ITR\common_bul_03.png" Width="20" Height="20"></Image>
+                <Image Grid.Column="0" Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Center" Source="\Assets\ITR\common_bul_04.png" Width="20" Height="20"></Image>
+                <Image Grid.Column="0" Grid.Row="5" VerticalAlignment="Center" HorizontalAlignment="Center" Source="\Assets\ITR\common_bul_05.png" Width="20" Height="20"></Image>
+                <Image Grid.Column="0" Grid.Row="6" VerticalAlignment="Center" HorizontalAlignment="Center" Source="\Assets\ITR\common_bul_06.png" Width="20" Height="20"></Image>
+                <Image Grid.Column="0" Grid.Row="7" VerticalAlignment="Center" HorizontalAlignment="Center" Source="\Assets\ITR\common_bul_07.png" Width="20" Height="20"></Image>
+
+                <TextBlock Grid.Column="1" Grid.Row="1" FontSize="15" Margin="5" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Text="PIPING PRESSURE TESTS COMPLETED FOR THE SYSTEM TO BE CLEANED.&#x0a;PIPELINES INCLUDED:" />
+                <TextBlock Grid.Column="1" Grid.Row="2" FontSize="15" Margin="5" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Text="PIPING SYSTEM PREPARED FOR CLEANING, INCLUDING THE PROTECTION OF AFFECTED HARDWARE,&#x0a;CHECK OF REACTIONS TO THE PIPING MATERIALS, FLUSHING, AND TEMPORARY SUPPORTS." />
+                <Grid Grid.Column="1" Grid.Row="3" Margin="5" VerticalAlignment="Center">
+                    <StackPanel>
+                        <TextBlock FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Text="PIPING SYSTEM CLEANED IN ACCORDANCE WITH THE SPECIFICATIONS.&#x0a;THE FOLLOWING PROCESS(ES) WAS (WERE) USED:" />
+                        <StackPanel Orientation="Horizontal">
+                            <CheckBox x:Name="chkMech" Margin="0, 0, 5, 0" Foreground="#7b91a2">MECHANICAL</CheckBox>
+                            <CheckBox x:Name="chkDeter" Margin="0, 0, 5, 0" Foreground="#7b91a2">DETERGENT</CheckBox>
+                            <CheckBox x:Name="chkAcid" Margin="0, 0, 5, 0" Foreground="#7b91a2">ACID</CheckBox>
+                            <CheckBox x:Name="chkOther"  Margin="0, 0, 5, 0" Foreground="#7b91a2">OTHER (SPECIFY)</CheckBox>
+                            <TextBox x:Name="txtComOther" Width="282" IsEnabled="False"></TextBox>
+                        </StackPanel>
+                    </StackPanel>
+                    
+                </Grid>
+                <TextBlock Grid.Column="1" Grid.Row="4" Margin="5" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Text="CLEANING MATERIALS USED ON THIS PIPE SYSTEM WERE: " />
+                <TextBlock Grid.Column="1" Grid.Row="5" Margin="5" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Text="TEST PERFORMED TO VERIFY CLEANLINESS WAS SATISFACTORY.&#x0a; THESE TESTS WERE: " />
+                <TextBox x:Name="txtCom5" Grid.Column="1" Grid.Row="5" Margin="145, 35, 10, 5"></TextBox>
+                <TextBlock Grid.Column="1" Grid.Row="6" Margin="5" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Text="PIPING SYSTEM PASSIVATED AFTER CLEANING WITH:" />
+                <TextBlock Grid.Column="1" Grid.Row="7" Margin="5" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Text="CLEANED PIPING SYSTEM HAS BEEN PROPERLY TAGGED AND IDENTIFIED" />
+                <TextBlock Grid.Column="0" Grid.ColumnSpan="4" Grid.Row="8" FontSize="15" Margin="10, 5, 5, 5" VerticalAlignment="Center"  FontStyle="Italic" FontFamily="Segoe UI Regular" Text="NOTE: PRIMARY RESPONSIBILITY FOR OBTAINING MULTIPLE DISCIPLINE SIGN OFF REST WITH PRIMARY USER." />
+
+                <appui:UCNFCSign x:Name="nfcCon1" Grid.Column="2" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Stretch"></appui:UCNFCSign>
+                <appui:UCNFCSign x:Name="nfcCon2" Grid.Column="2" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Stretch"></appui:UCNFCSign>
+                <appui:UCNFCSign x:Name="nfcCon3" Grid.Column="2" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Stretch"></appui:UCNFCSign>
+                <appui:UCNFCSign x:Name="nfcCon4" Grid.Column="2" Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Stretch"></appui:UCNFCSign>
+                <appui:UCNFCSign x:Name="nfcCon5" Grid.Column="2" Grid.Row="5" VerticalAlignment="Center" HorizontalAlignment="Stretch"></appui:UCNFCSign>
+                <appui:UCNFCSign x:Name="nfcCon6" Grid.Column="2" Grid.Row="6" VerticalAlignment="Center" HorizontalAlignment="Stretch"></appui:UCNFCSign>
+                <appui:UCNFCSign x:Name="nfcCon7" Grid.Column="2" Grid.Row="7" VerticalAlignment="Center" HorizontalAlignment="Stretch"></appui:UCNFCSign>
+
+                <appui:UCNFCSign x:Name="nfcMeg1" Grid.Column="3" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Stretch"></appui:UCNFCSign>
+                <appui:UCNFCSign x:Name="nfcMeg2" Grid.Column="3" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Stretch"></appui:UCNFCSign>
+                <appui:UCNFCSign x:Name="nfcMeg3" Grid.Column="3" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Stretch"></appui:UCNFCSign>
+                <appui:UCNFCSign x:Name="nfcMeg4" Grid.Column="3" Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Stretch"></appui:UCNFCSign>
+                <appui:UCNFCSign x:Name="nfcMeg5" Grid.Column="3" Grid.Row="5" VerticalAlignment="Center" HorizontalAlignment="Stretch"></appui:UCNFCSign>
+                <appui:UCNFCSign x:Name="nfcMeg6" Grid.Column="3" Grid.Row="6" VerticalAlignment="Center" HorizontalAlignment="Stretch"></appui:UCNFCSign>
+                <appui:UCNFCSign x:Name="nfcMeg7" Grid.Column="3" Grid.Row="7" VerticalAlignment="Center" HorizontalAlignment="Stretch"></appui:UCNFCSign>
+
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

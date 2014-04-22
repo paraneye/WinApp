@@ -1,0 +1,291 @@
+﻿<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Element.Reveal.Meg.Discipline.ITR"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:c1="using:C1.Xaml.DateTimeEditors"
+    xmlns:control="using:WinAppLibrary.Controls"
+    xmlns:appui="using:WinAppLibrary.UI"
+    xmlns:Xaml="using:C1.Xaml"
+    x:Class="Element.Reveal.Meg.Discipline.ITR.UCControlCableReelReceivingExhibit"
+    mc:Ignorable="d"
+    Height="600"
+    Width="2610">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="46"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="400"/>
+            <ColumnDefinition Width="80"/>
+            <ColumnDefinition Width="300"/>
+            <ColumnDefinition Width="80"/>
+            <ColumnDefinition Width="750"/>
+            <ColumnDefinition Width="80"/>
+            <ColumnDefinition Width="820"/>
+            <ColumnDefinition Width="80"/>
+        </Grid.ColumnDefinitions>
+        <!--Project Information-->
+        <StackPanel Grid.Row="0" Grid.Column="0" VerticalAlignment="Top" Height="32">
+            <TextBlock TextWrapping="Wrap" FontSize="26"  Text="Project Infomation" Foreground="#fff" FontFamily="Segoe UI light"/>
+        </StackPanel>
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Hidden" Grid.Column="0" VerticalAlignment="Top">
+            <Grid VerticalAlignment="Top" Height="500">
+                <Grid.Background>
+                    <SolidColorBrush Color="Black" Opacity="0.5" />
+                </Grid.Background>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="41"/>
+                    <RowDefinition Height="41"/>
+                    <RowDefinition Height="41"/>
+                    <RowDefinition Height="41"/>
+                    <RowDefinition Height="41"/>
+                    <RowDefinition Height="43"/>
+                    <RowDefinition Height="41"/>
+                    <RowDefinition Height="41"/>
+                    <RowDefinition Height="41"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="190"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Grid.Row="0" Margin="20,13,0,0" VerticalAlignment="Top" FontSize="15" Foreground="#7b91a2" FontFamily="Segoe UI Regular" Text="Project Name"/>
+                <TextBlock Grid.Column="0" Grid.Row="1" Margin="20,13,0,0" VerticalAlignment="Top" FontSize="15" Foreground="#7b91a2" FontFamily="Segoe UI Regular" Text="Project Number"/>
+                <TextBlock Grid.Column="0" Grid.Row="2" Margin="20,13,0,0" VerticalAlignment="Top" FontSize="15" Foreground="#7b91a2" FontFamily="Segoe UI Regular" Text="CWP/EWP No"/>
+                <TextBlock Grid.Column="0" Grid.Row="3" Margin="20,13,0,0" VerticalAlignment="Top" FontSize="15" Foreground="#7b91a2" FontFamily="Segoe UI Regular" Text="Contractor Job No"/>
+                <TextBlock Grid.Column="0" Grid.Row="4" Margin="20,13,0,0" VerticalAlignment="Top" FontSize="15" Foreground="#7b91a2" FontFamily="Segoe UI Regular" Text="Inspection Date"/>
+                <TextBlock Grid.Column="0" Grid.Row="5" Margin="20,5,0,5" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" Foreground="#7b91a2" FontFamily="Segoe UI Regular" TextWrapping="Wrap" Width="100" Text="Inspected By  (Print Name)"/>
+                <TextBlock Grid.Column="0" Grid.Row="6" Margin="20,13,0,0" VerticalAlignment="Top" FontSize="15" Foreground="#7b91a2" FontFamily="Segoe UI Regular" Text="IWP No"/>
+                <TextBlock Grid.Column="0" Grid.Row="7" Margin="20,13,0,0" VerticalAlignment="Top" FontSize="15" Foreground="#7b91a2" FontFamily="Segoe UI Regular" Text="System No"/>
+                <TextBlock Grid.Column="0" Grid.Row="8" Margin="20,13,0,0" VerticalAlignment="Top" FontSize="15" Foreground="#7b91a2" FontFamily="Segoe UI Regular" Text="System Name"/>
+                <TextBlock x:Name="txtProjectName" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="3" Margin="10,13,0,0" FontSize="15" Foreground="#fff" FontFamily="Segoe UI Regular" />
+                <TextBlock x:Name="txtProjectNumber" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="3" Margin="10,13,0,0" FontSize="15" Foreground="#fff" FontFamily="Segoe UI Regular"/>
+                <TextBlock x:Name="txtCwpEwpNo" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="3" Margin="10,13,0,0" FontSize="15" Foreground="#fff" FontFamily="Segoe UI Regular"/>
+                <TextBlock x:Name="txtContractorJobNo" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="3" Margin="10,13,0,0" FontSize="15" Foreground="#fff" FontFamily="Segoe UI Regular"/>
+                <!--<appui:DateSelector x:Name="dtpInspectionDate" Grid.Column="1" Grid.Row="4" Width="200"></appui:DateSelector>-->
+                <c1:C1DatePicker x:Name="dtpInspectionDate"  Grid.Column="1"  Grid.Row="4"  VerticalAlignment="Top" Margin="0,0,20,0" Width="190"  />
+                <!--<TextBox x:Name="txtInspectionDate" Grid.Column="1" Grid.Row="4" Margin="10,13,0,0" FontSize="15" Foreground="#fff" FontFamily="Segoe UI Regular"/>-->
+                <TextBox x:Name="txtInpectedBy" Grid.Column="1" Grid.Row="5" Margin="3,5,20,5" FontSize="15"  FontFamily="Segoe UI Regular"/>
+                <TextBlock x:Name="txtIwpNo" Grid.Column="1" Grid.Row="6" Grid.ColumnSpan="3" Margin="10,13,0,0" FontSize="15" Foreground="#fff" FontFamily="Segoe UI Regular"/>
+                <TextBlock x:Name="txtSystemNo" Grid.Column="1" Grid.Row="7" Grid.ColumnSpan="3" Margin="10,13,0,0" FontSize="15" Foreground="#fff" FontFamily="Segoe UI Regular"/>
+                <TextBlock x:Name="txtSystemName" Grid.Column="1" Grid.Row="8" Grid.ColumnSpan="3" Margin="10,13,0,0" FontSize="15" Foreground="#fff" FontFamily="Segoe UI Regular"/>
+            </Grid>
+        </ScrollViewer>
+        <!--Cable Information-->
+        <StackPanel Grid.Row="0" Grid.Column="2" VerticalAlignment="Top" Height="32">
+            <TextBlock TextWrapping="Wrap" FontSize="26"  Text="Cable Information" Foreground="#fff" FontFamily="Segoe UI light"/>
+        </StackPanel>
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Hidden" Grid.Column="2" Height="500" VerticalAlignment="Top">
+            <Grid VerticalAlignment="Top" Height="500">
+                <Grid.Background>
+                    <SolidColorBrush Color="Black" Opacity="0.5" />
+                </Grid.Background>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="41"/>
+                    <RowDefinition Height="41"/>
+                    <RowDefinition Height="41"/>
+                    <RowDefinition Height="41"/>
+                    <RowDefinition Height="41"/>
+                    <RowDefinition Height="41"/>
+                    <RowDefinition Height="41"/>
+                    <RowDefinition Height="41"/>
+                    <RowDefinition Height="41"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Grid.Row="0" Margin="20,13,0,0" VerticalAlignment="Top" FontSize="15" Foreground="#7b91a2" FontFamily="Segoe UI Regular" Text="Reel No"/>
+                <TextBlock Grid.Column="0" Grid.Row="1" Margin="20,13,0,0" VerticalAlignment="Top" FontSize="15" Foreground="#7b91a2" FontFamily="Segoe UI Regular" Text="Cable Type"/>
+                <TextBlock Grid.Column="0" Grid.Row="2" Margin="20,13,0,0" VerticalAlignment="Top" FontSize="15" Foreground="#7b91a2" FontFamily="Segoe UI Regular" Text="Voltage Rating"/>
+                <TextBlock Grid.Column="0" Grid.Row="3" Margin="20,13,0,0" VerticalAlignment="Top" FontSize="15" Foreground="#7b91a2" FontFamily="Segoe UI Regular" Text="Length"/>
+                <TextBlock Grid.Column="0" Grid.Row="4" Margin="20,13,0,0" VerticalAlignment="Top" FontSize="15" Foreground="#7b91a2" FontFamily="Segoe UI Regular" Text="# of Conductors"/>
+                <TextBlock Grid.Column="0" Grid.Row="5" Margin="20,13,0,0" VerticalAlignment="Top" FontSize="15" Foreground="#7b91a2" FontFamily="Segoe UI Regular" Text="Cable Size(AWG)"/>
+                <TextBlock Grid.Column="0" Grid.Row="6" Margin="20,13,0,0" VerticalAlignment="Top" FontSize="15" Foreground="#7b91a2" FontFamily="Segoe UI Regular" Text="UOM"/>
+                <TextBlock x:Name="txtReelNo" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="3" Margin="10,13,0,0" FontSize="15" Foreground="#fff" FontFamily="Segoe UI Regular" />
+                <TextBlock x:Name="txtCableType" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="3" Margin="10,13,0,0" FontSize="15" Foreground="#fff" FontFamily="Segoe UI Regular"/>
+                <TextBlock x:Name="txtVoltageRating" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="3" Margin="10,13,0,0" FontSize="15" Foreground="#fff" FontFamily="Segoe UI Regular"/>
+                <TextBox x:Name="txtLength" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="3" Margin="5,5,20,5" FontSize="15"  FontFamily="Segoe UI Regular"/>
+                <TextBlock x:Name="txtConductors" Grid.Column="1" Grid.Row="4" Margin="10,13,0,0" FontSize="15" Foreground="#fff" FontFamily="Segoe UI Regular"/>
+                <TextBlock x:Name="txtCableSize" Grid.Column="1" Grid.Row="5" Margin="10,13,0,0" FontSize="15" Foreground="#fff" FontFamily="Segoe UI Regular"/>
+                <TextBox x:Name="txtUOM" Grid.Column="1" Grid.Row="6" Grid.ColumnSpan="3" Margin="5,5,20,5" FontSize="15" FontFamily="Segoe UI Regular"/>
+            </Grid>
+        </ScrollViewer>
+        <!--Cable Length & Location Information-->
+        <StackPanel Grid.Row="0" Grid.Column="4" VerticalAlignment="Top" Height="32">
+            <TextBlock TextWrapping="Wrap" FontSize="26"  Text="Cable Length &amp; Location Information" Foreground="#fff" FontFamily="Segoe UI light"/>
+        </StackPanel>
+        <Grid Grid.Row="1" Grid.Column="4" Height="500" VerticalAlignment="Top">
+            <Grid.Background>
+                <SolidColorBrush Color="Black" Opacity="0.5" />
+            </Grid.Background>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0" Margin="20,20,0,0" FontSize="15" Foreground="#fff" FontFamily="Segoe UI Regular"  Text="Total Assigned"/>
+            <TextBlock Grid.Row="0" x:Name="txtTotalAssigned" Margin="128,20,496,10"  FontSize="15" FontFamily="Segoe UI Regular"/>
+            <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="140" />
+                    <ColumnDefinition Width="120" />
+                    <ColumnDefinition Width="120" />
+                    <ColumnDefinition Width="120" />
+                    <ColumnDefinition Width="120" />
+                    <ColumnDefinition Width="110" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" FontSize="15" Foreground="#fff" FontFamily="Segoe UI Regular" VerticalAlignment="Center" HorizontalAlignment="Center" Text="Cable Tag Number"/>
+                <TextBlock Grid.Column="1" FontSize="15" Foreground="#fff" FontFamily="Segoe UI Regular" VerticalAlignment="Center" HorizontalAlignment="Center" Text="EST Length"/>
+                <TextBlock Grid.Column="2" FontSize="15" Foreground="#fff" FontFamily="Segoe UI Regular" VerticalAlignment="Center" HorizontalAlignment="Center" Text="UOM"/>
+                <TextBlock Grid.Column="3" FontSize="15" Foreground="#fff" FontFamily="Segoe UI Regular" VerticalAlignment="Center" HorizontalAlignment="Center" Text="From Location"/>
+                <TextBlock Grid.Column="4" FontSize="15" Foreground="#fff" FontFamily="Segoe UI Regular" VerticalAlignment="Center" HorizontalAlignment="Center" Text="To Location"/>
+                <TextBlock Grid.Column="5" FontSize="15" Foreground="#fff" FontFamily="Segoe UI Regular" VerticalAlignment="Center" HorizontalAlignment="Center" Text="FIWP"/>
+            </Grid>
+            
+            <ListView x:Name="lvList"
+                          Margin="0,0,0,20"
+                          VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
+                          HorizontalContentAlignment="Stretch"
+                          ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollMode="Auto"
+                          SelectionMode="None" IsItemClickEnabled="False" 
+                          IsSwipeEnabled="True" CanReorderItems="True" AllowDrop="True" Grid.Row="2"
+                          >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="40" Tag="Crew">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="140" />
+                                <ColumnDefinition Width="120" />
+                                <ColumnDefinition Width="120" />
+                                <ColumnDefinition Width="120" />
+                                <ColumnDefinition Width="120" />
+                                <ColumnDefinition Width="110" />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock x:Name="StringValue1" Grid.Column="0" Text="{Binding StringValue1}" TextAlignment="Center" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
+                            <TextBlock x:Name="StringValue2" Grid.Column="1" Text="{Binding StringValue2}" TextAlignment="Right" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+                            <TextBlock x:Name="StringValue3" Grid.Column="2" Text="{Binding StringValue3}" TextAlignment="Center" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+                            <TextBlock x:Name="StringValue4" Grid.Column="3" Text="{Binding StringValue4}" TextAlignment="Center" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+                            <TextBlock x:Name="StringValue5" Grid.Column="4" Text="{Binding StringValue5}" TextAlignment="Center" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+                            <TextBlock x:Name="StringValue6" Grid.Column="5" Text="{Binding StringValue6}" TextAlignment="Center" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            
+        </Grid>
+        <!--Power Cable Reel Receiving-->
+        <StackPanel Grid.Row="0" Grid.Column="6" VerticalAlignment="Top" Height="32">
+            <TextBlock TextWrapping="Wrap" FontSize="26"  Text="Control Cable Reel Receiving" Foreground="#fff" FontFamily="Segoe UI light"/>
+        </StackPanel>
+        <Grid Grid.Row="1" Grid.Column="6" Height="500" VerticalAlignment="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="300"/>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="220"/>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="210"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0" Grid.Row="0">
+                <Grid.Background>
+                    <SolidColorBrush Color="Black" Opacity="0.5" />
+                </Grid.Background>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Column="0" Grid.Row="0" Background="#000" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                    <TextBlock FontSize="15" Foreground="#92d050" FontFamily="Segoe UI Regular" Text="Ware-House" Margin="0,5,0,0" HorizontalAlignment="Center"/>
+                </StackPanel>
+                <TextBlock Grid.Column="0" Grid.Row="1" Margin="20,13,0,0" VerticalAlignment="Top" FontSize="15" Foreground="#7b91a2" FontFamily="Segoe UI Regular" Text="Visual Inspection Performed"/>
+                <StackPanel Grid.Column="0" Grid.Row="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Orientation="Horizontal">
+                    <CheckBox x:Name="chkYes" Margin="110,0,0,0">
+                        <TextBlock FontSize="15" Foreground="#7b91a2" FontFamily="Segoe UI Regular" Text="Yes"/>
+                    </CheckBox>
+                    <CheckBox x:Name="chkNo" Margin="20,0,0,0">
+                        <TextBlock FontSize="15" Foreground="#7b91a2" FontFamily="Segoe UI Regular" Text="No"/>
+                    </CheckBox>
+                </StackPanel>
+                <ListView x:Name="lvNFCSignList2"  Margin="5"  Grid.Column="0" Grid.Row="3"
+                    SelectionMode="Single" IsItemClickEnabled="True" ManipulationMode="TranslateRailsX,TranslateX"  ManipulationCompleted="lvNFCSignList2_ManipulationCompleted"
+                    IsSwipeEnabled="True"  ItemsSource="{Binding}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <appui:UCNFCSign Margin="10"/>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+            <Grid Grid.Column="2" Grid.Row="0">
+                <Grid.Background>
+                    <SolidColorBrush Color="Black" Opacity="0.5" />
+                </Grid.Background>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="140" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Background="#000" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                    <TextBlock FontSize="15" Foreground="#92d050" FontFamily="Segoe UI Regular" Text="Pre-Test" Margin="0,5,0,0" HorizontalAlignment="Center"/>
+                </StackPanel>
+                <TextBlock Grid.Column="0" Grid.Row="1" Margin="20,13,0,0" VerticalAlignment="Top" FontSize="15" Foreground="#7b91a2" FontFamily="Segoe UI Regular" Text="COND To COND"/>
+                <TextBlock Grid.Column="0" Grid.Row="2" Margin="20,13,0,0" VerticalAlignment="Top" FontSize="15" Foreground="#7b91a2" FontFamily="Segoe UI Regular" Text="COND To GRND"/>
+                <TextBlock Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2" Margin="20,13,0,0" VerticalAlignment="Top" FontSize="15" Foreground="#7b91a2" FontFamily="Segoe UI Regular" Text="Comments"/>
+                <TextBox Grid.Column="1" Grid.Row="1" x:Name="txtCOND" Margin="0,5,20,5" FontSize="15" FontFamily="Segoe UI Regular"/>
+                <TextBox Grid.Column="1" Grid.Row="2" x:Name="txtGRND" Margin="0,5,20,5" FontSize="15" FontFamily="Segoe UI Regular"/>
+                <TextBox Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" x:Name="txtComments" Margin="20,0,20,20" FontSize="15" TextWrapping="Wrap" FontFamily="Segoe UI Regular"/>
+            </Grid>
+            <Grid Grid.Column="4" Grid.Row="0" Margin="0,0,-42,0">
+                <Grid.Background>
+                    <SolidColorBrush Color="Black" Opacity="0.5" />
+                </Grid.Background>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Column="0" Grid.Row="0" Background="#000" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                    <TextBlock FontSize="15" Foreground="#92d050" FontFamily="Segoe UI Regular" Text="Test Info" Margin="0,5,0,0" HorizontalAlignment="Center"/>
+                </StackPanel>
+                <TextBlock Grid.Column="0" Grid.Row="1" Margin="20,13,0,0" VerticalAlignment="Top" FontSize="15" Foreground="#7b91a2" FontFamily="Segoe UI Regular" Text="Equip Type"/>
+                <TextBlock Grid.Column="0" Grid.Row="3" Margin="20,13,0,0" VerticalAlignment="Top" FontSize="15" Foreground="#7b91a2" FontFamily="Segoe UI Regular" Text="Serial No"/>
+                <TextBlock Grid.Column="0" Grid.Row="5" Margin="20,13,0,0" VerticalAlignment="Top" FontSize="15" Foreground="#7b91a2" FontFamily="Segoe UI Regular" Text="Calibration Due Date"/>
+                <TextBlock Grid.Column="0" Grid.Row="7" Margin="20,13,0,0" VerticalAlignment="Top" FontSize="15" Foreground="#7b91a2" FontFamily="Segoe UI Regular" Text="By Whom"/>
+                <TextBlock Grid.Column="0" Grid.Row="9" Margin="20,13,0,0" VerticalAlignment="Top" FontSize="15" Foreground="#7b91a2" FontFamily="Segoe UI Regular" Text="Date"/>
+                <TextBox Grid.Column="0" Grid.Row="2" x:Name="txtEquip" Margin="20,5,20,5" FontSize="15" FontFamily="Segoe UI Regular"/>
+                <TextBox Grid.Column="0" Grid.Row="4" x:Name="txtSerial" Margin="20,5,20,5" FontSize="15" FontFamily="Segoe UI Regular"/>
+                <!--<TextBox Grid.Column="0" Grid.Row="6" x:Name="txtCalibrationDueDate" Margin="10,0,5,0" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="15" FontFamily="Segoe UI Regular"/>-->
+                <c1:C1DatePicker x:Name="dtpCalibrationDueDate" Grid.Column="0"  Grid.Row="6" VerticalAlignment="Top" Margin="20,0,20,0"     ></c1:C1DatePicker>
+                <!--<appui:DateSelector Grid.Column="0" Grid.Row="6" x:Name="dtpCalibrationDueDate" Margin="10,0,5,0" VerticalAlignment="Center" HorizontalAlignment="Right"/>-->
+                <TextBox Grid.Column="0" Grid.Row="8" x:Name="txtByWhom" Margin="20,5,20,5" FontSize="15" FontFamily="Segoe UI Regular"/>
+                <!--<appui:DateSelector Grid.Column="0" Grid.Row="10" x:Name="dtpDate" Margin="10,0,5,0" VerticalAlignment="Center" HorizontalAlignment="Right"/>-->
+                <c1:C1DatePicker x:Name="dtpDate"  Grid.Column="0" Grid.Row="10" VerticalAlignment="Top" Margin="20,0,20,0"    ></c1:C1DatePicker>
+                <!--<c1:C1DatePicker Grid.Column="0" Grid.Row="10" x:Name="dtpDate" Margin="10,0,5,0" VerticalAlignment="Center" HorizontalAlignment="Right" />-->
+            </Grid>
+        </Grid>
+        <!--User Signature-->
+    </Grid>
+</UserControl>

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
+  <Identity Publisher="CN=E.I.S" Version="1.0.1.317" Name="79B2D051-5369-4DCC-AD4A-5D2C9A525F5A" />
+  <Properties>
+    <DisplayName>Reveal Crew</DisplayName>
+    <PublisherDisplayName>E.I.S.</PublisherDisplayName>
+    <Logo>Assets\StoreLogo.png</Logo>
+  </Properties>
+  <Prerequisites>
+    <OSMinVersion>6.2.1</OSMinVersion>
+    <OSMaxVersionTested>6.2.1</OSMaxVersionTested>
+  </Prerequisites>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="Element.Reveal.Crew.App">
+      <VisualElements DisplayName="Reveal Crew" Logo="Assets\ElementLogo Small.png" SmallLogo="Assets\SmallLogo.png" Description="Reveal Crew Signing" ForegroundText="light" BackgroundColor="#464646">
+        <DefaultTile ShowName="allLogos" WideLogo="Assets\WideLogo.png" />
+        <SplashScreen Image="Assets\ElementLogo Big.png" BackgroundColor="#1A242C" />
+      </VisualElements>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="internetClient" />
+    <DeviceCapability Name="proximity" />
+  </Capabilities>
+</Package>

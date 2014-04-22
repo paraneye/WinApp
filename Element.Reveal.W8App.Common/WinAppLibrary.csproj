@@ -1,0 +1,449 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E1B9C5DB-6161-47DC-8F6F-F159CDCB4C30}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WinAppLibrary</RootNamespace>
+    <AssemblyName>WinAppLibrary</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{BC8A1FFA-BEE3-4634-8014-F334798102B3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <OutputPath>bin\ARM\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Controls\BindableBase.cs" />
+    <Compile Include="Controls\ControlCommandModel.cs" />
+    <Compile Include="Controls\DelegateCommandModel.cs" />
+    <Compile Include="Controls\LayoutAwarePage.cs" />
+    <Compile Include="Controls\LayoutTransformer.cs" />
+    <Compile Include="Controls\RandomSizedItemGrid.cs" />
+    <Compile Include="Controls\RichTextColumns.cs" />
+    <Compile Include="Controls\StretchingCanvas.cs" />
+    <Compile Include="Controls\SuspensionManager.cs" />
+    <Compile Include="Converters\ControlConverter.cs" />
+    <Compile Include="Converters\DataValueConverter.cs" />
+    <Compile Include="Converters\TaskCompletionNotifier.cs" />
+    <Compile Include="Extensions\Collection.cs" />
+    <Compile Include="Extensions\DatePickerEx.cs" />
+    <Compile Include="Extensions\FrameworkElement.cs" />
+    <Compile Include="Extensions\TextBox.cs" />
+    <Compile Include="Menu\MenuDataSource.cs" />
+    <Compile Include="ServiceModels\GroupModel.cs" />
+    <Compile Include="UI\ButtonDialog.xaml.cs">
+      <DependentUpon>ButtonDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Communication.xaml.cs">
+      <DependentUpon>Communication.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CWP.xaml.cs">
+      <DependentUpon>CWP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DatePickerFullScreen.xaml.cs">
+      <DependentUpon>DatePickerFullScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DatePicker.xaml.cs">
+      <DependentUpon>DatePicker.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DateSelector.xaml.cs">
+      <DependentUpon>DateSelector.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DepartmentCrewList.xaml.cs">
+      <DependentUpon>DepartmentCrewList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DrawingViewer.xaml.cs">
+      <DependentUpon>DrawingViewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DrawingManipulationAppBar.xaml.cs">
+      <DependentUpon>DrawingManipulationAppBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DrawingManipulation.xaml.cs">
+      <DependentUpon>DrawingManipulation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DrawingViewBoundary.xaml.cs">
+      <DependentUpon>DrawingViewBoundary.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ScheduleSet.xaml.cs">
+      <DependentUpon>ScheduleSet.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SettingsOptions.xaml.cs">
+      <DependentUpon>SettingsOptions.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SignoffStatus.xaml.cs">
+      <DependentUpon>SignoffStatus.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TrueTaskMasterPage.xaml.cs">
+      <DependentUpon>TrueTaskMasterPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DrawingEditor.xaml.cs">
+      <DependentUpon>DrawingEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DrawingEditorAppBar.xaml.cs">
+      <DependentUpon>DrawingEditorAppBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DrawingSlider.xaml.cs">
+      <DependentUpon>DrawingSlider.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MasterPage.xaml.cs">
+      <DependentUpon>MasterPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SettingsFlyout.xaml.cs">
+      <DependentUpon>SettingsFlyout.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\StickyNote.xaml.cs">
+      <DependentUpon>StickyNote.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\StretchingPanel.xaml.cs">
+      <DependentUpon>StretchingPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\InputDialog.xaml.cs">
+      <DependentUpon>InputDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Loader.xaml.cs">
+      <DependentUpon>Loader.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MessageDialog.xaml.cs">
+      <DependentUpon>MessageDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SlideButton.xaml.cs">
+      <DependentUpon>SlideButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TopBanner.xaml.cs">
+      <DependentUpon>TopBanner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\NFCSign.xaml.cs">
+      <DependentUpon>NFCSign.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UserStatus.xaml.cs">
+      <DependentUpon>UserStatus.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\WorkflowBanner.xaml.cs">
+      <DependentUpon>WorkflowBanner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities\AnimationHelper.cs" />
+    <Compile Include="Converters\BooleanConverter.cs" />
+    <Compile Include="Utilities\Clip.cs" />
+    <Compile Include="Utilities\Constant.cs" />
+    <Compile Include="Utilities\FileDocument.cs" />
+    <Compile Include="Utilities\Helper.cs" />
+    <Compile Include="Utilities\HttpUtility.cs" />
+    <Compile Include="Converters\ImageConverter.cs" />
+    <Compile Include="Utilities\InputProcessor.cs" />
+    <Compile Include="Utilities\JsonHelper.cs" />
+    <Compile Include="Utilities\ManipulationFilter.cs" />
+    <Compile Include="Utilities\ManipulationManager.cs" />
+    <Compile Include="Utilities\ServiceHelper.cs" />
+    <Compile Include="Utilities\SPDocument.cs" />
+    <Compile Include="Utilities\SPOAuthUtility.cs" />
+    <Compile Include="Utilities\WebDavClient_Old.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="Resources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Themes\ControlStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Page>
+    <Page Include="UI\ButtonDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Communication.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\CWP.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\DatePickerFullScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\DatePicker.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\DateSelector.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\DepartmentCrewList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\DrawingViewer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\DrawingManipulationAppBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\DrawingManipulation.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\DrawingViewBoundary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\ScheduleSet.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\SettingsOptions.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\SignoffStatus.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\TrueTaskMasterPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\DrawingEditor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\DrawingEditorAppBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\DrawingSlider.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\MasterPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\SettingsFlyout.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\StickyNote.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\StretchingPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\InputDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Loader.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\StandardStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Page>
+    <Page Include="UI\Login.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\MessageDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\SlideButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\TopBanner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\NFCSign.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\UserStatus.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\WorkflowBanner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\common_defaultimage_nfc.png" />
+    <Content Include="Assets\common_default_user.png" />
+    <Content Include="Assets\default_crew.png" />
+    <Content Include="Assets\displayperiod_1mon.png" />
+    <Content Include="Assets\displayperiod_1mon_d.png" />
+    <Content Include="Assets\displayperiod_2mon.png" />
+    <Content Include="Assets\displayperiod_2mon_o.png" />
+    <Content Include="Assets\displayperiod_3mon.png" />
+    <Content Include="Assets\displayperiod_3mon_o.png" />
+    <Content Include="Assets\Revealtm.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\circlearrow.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\status_arrow.png" />
+    <Content Include="Assets\status_complete.png" />
+    <Content Include="Assets\status_notsent.png" />
+    <Content Include="Assets\status_pending.png" />
+    <Content Include="Assets\status_rejected.png" />
+    <Content Include="Assets\sticky0.png" />
+    <Content Include="Assets\sticky1.png" />
+    <Content Include="Assets\sticky2.png" />
+    <Content Include="Assets\sticky3.png" />
+    <Content Include="Assets\sticky4.png" />
+    <Content Include="Assets\stretchingbg.png" />
+    <Content Include="Assets\tophalfbanner.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="SharpDX">
+      <HintPath>..\..\..\Win8_Apps_ReferenceDLL\SharpDX.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.Direct2D1">
+      <HintPath>..\..\..\Win8_Apps_ReferenceDLL\SharpDX.Direct2D1.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.DXGI">
+      <HintPath>..\..\..\Win8_Apps_ReferenceDLL\SharpDX.DXGI.dll</HintPath>
+    </Reference>
+    <Reference Include="WinAppLibraryEx">
+      <HintPath>..\..\..\Win8_Apps_ReferenceDLL\WinAppLibraryEx.dll</HintPath>
+    </Reference>
+    <Reference Include="WinRTXamlToolkit">
+      <HintPath>..\..\..\Win8_Apps_ReferenceDLL\WinRTXamlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="WinRTXamlToolkit.Composition">
+      <HintPath>..\..\..\Win8_Apps_ReferenceDLL\WinRTXamlToolkit.Composition.dll</HintPath>
+    </Reference>
+    <Reference Include="WriteableBitmapEx.WinRT">
+      <HintPath>..\..\..\Win8_Apps_ReferenceDLL\WriteableBitmapEx.WinRT.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\element-reveal-datalibrary\Element.Reveal.DataLibrary.csproj">
+      <Project>{28800864-79a5-4151-bf2c-320d7e3e2190}</Project>
+      <Name>Element.Reveal.DataLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '11.0' ">
+    <VisualStudioVersion>11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

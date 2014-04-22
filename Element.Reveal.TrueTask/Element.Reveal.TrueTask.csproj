@@ -1,0 +1,1380 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FB266536-72AE-427C-AB65-C85CC39AC8D6}</ProjectGuid>
+    <OutputType>AppContainerExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Element.Reveal.TrueTask</RootNamespace>
+    <AssemblyName>Element.Reveal.TrueTask</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{BC8A1FFA-BEE3-4634-8014-F334798102B3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <PackageCertificateKeyFile>Element.Reveal.TrueTask_TemporaryKey.pfx</PackageCertificateKeyFile>
+    <AppxAutoIncrementPackageRevision>False</AppxAutoIncrementPackageRevision>
+    <AppxPackageDir>C:\AppPackages\</AppxPackageDir>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <OutputPath>bin\ARM\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Discipline\IWPSignoff\IWPSignoffStatus.xaml.cs">
+      <DependentUpon>IWPSignoffStatus.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Discipline\IWPSignoff\SelectApprover.xaml.cs">
+      <DependentUpon>SelectApprover.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Discipline\IWPSignoff\SelectTask.xaml.cs">
+      <DependentUpon>SelectTask.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Discipline\IWPSignoff\SignoffTitle.xaml.cs">
+      <DependentUpon>SignoffTitle.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Discipline\MTO\DrawingViewerMarkup.xaml.cs">
+      <DependentUpon>DrawingViewerMarkup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Discipline\MTO\SelectLibrary.xaml.cs">
+      <DependentUpon>SelectLibrary.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Discipline\MTO\DrawingViewer.xaml.cs">
+      <DependentUpon>DrawingViewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Discipline\MTO\SelectType.xaml.cs">
+      <DependentUpon>SelectType.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Discipline\MTO\MaterialTakeoff.xaml.cs">
+      <DependentUpon>MaterialTakeoff.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Discipline\MTO\MTOScreenTest.xaml.cs">
+      <DependentUpon>MTOScreenTest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Discipline\MTO\ThumbnailViewer.xaml.cs">
+      <DependentUpon>ThumbnailViewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Discipline\MTO\SelectCWP.xaml.cs">
+      <DependentUpon>SelectCWP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Discipline\Schedule\AssembleIWP\AssembleDocument.xaml.cs">
+      <DependentUpon>AssembleDocument.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Discipline\Schedule\AssembleIWP\AssembleIWP.xaml.cs">
+      <DependentUpon>AssembleIWP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Discipline\Schedule\AssembleIWP\AssembleReport.xaml.cs">
+      <DependentUpon>AssembleReport.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Discipline\Schedule\AssembleIWP\ConsumableMaterial.xaml.cs">
+      <DependentUpon>ConsumableMaterial.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Discipline\Schedule\AssembleIWP\SelectIWP.xaml.cs">
+      <DependentUpon>SelectIWP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Discipline\Schedule\AssembleIWP\FieldEquipment.xaml.cs">
+      <DependentUpon>FieldEquipment.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Discipline\Schedule\AssembleIWP\LoadSitePlan.xaml.cs">
+      <DependentUpon>LoadSitePlan.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Discipline\Schedule\AssembleIWP\SelectCWP.xaml.cs">
+      <DependentUpon>SelectCWP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Discipline\Schedule\AssembleIWP\SelectCWPIWP.xaml.cs">
+      <DependentUpon>SelectCWPIWP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Discipline\Schedule\AssembleIWP\SelectSchedule.xaml.cs">
+      <DependentUpon>SelectSchedule.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Discipline\Schedule\BuildCSU\AssembleCSU.xaml.cs">
+      <DependentUpon>AssembleCSU.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Discipline\Schedule\BuildCSU\AssociatedDocument.xaml.cs">
+      <DependentUpon>AssociatedDocument.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Discipline\Schedule\BuildCSU\PSSRS.xaml.cs">
+      <DependentUpon>PSSRS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Discipline\Schedule\BuildCSU\SelectCSU.xaml.cs">
+      <DependentUpon>SelectCSU.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Discipline\Schedule\BuildCSU\SelectDrawing.xaml.cs">
+      <DependentUpon>SelectDrawing.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Discipline\Schedule\BuildHydro\ComponentGrouping.xaml.cs">
+      <DependentUpon>ComponentGrouping.xaml</DependentUpon>
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="Discipline\Schedule\BuildHydro\ScheduleComponents.xaml.cs">
+      <DependentUpon>ScheduleComponents.xaml</DependentUpon>
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="Discipline\Schedule\BuildHydro\SelectCWP.xaml.cs">
+      <DependentUpon>SelectCWP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Discipline\Schedule\BuildHydro\SelectHydro.xaml.cs">
+      <DependentUpon>SelectHydro.xaml</DependentUpon>
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="Discipline\Schedule\BuildIWP\ComponentGrouping.xaml.cs">
+      <DependentUpon>ComponentGrouping.xaml</DependentUpon>
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="Discipline\Schedule\BuildIWP\ScheduleComponents.xaml.cs">
+      <DependentUpon>ScheduleComponents.xaml</DependentUpon>
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="Discipline\Schedule\BuildIWP\SelectCWP.xaml.cs">
+      <DependentUpon>SelectCWP.xaml</DependentUpon>
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="Discipline\Schedule\BuildIWP\SelectIWP.xaml.cs">
+      <DependentUpon>SelectIWP.xaml</DependentUpon>
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="Discipline\Schedule\BuildSchedule\ComponentGrouping.xaml.cs">
+      <DependentUpon>ComponentGrouping.xaml</DependentUpon>
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="Discipline\Schedule\BuildSchedule\ScheduleComponents.xaml.cs">
+      <DependentUpon>ScheduleComponents.xaml</DependentUpon>
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="Discipline\Schedule\BuildSchedule\SelectCWP.xaml.cs">
+      <DependentUpon>SelectCWP.xaml</DependentUpon>
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="Discipline\Schedule\BuildSchedule\SelectSchedule.xaml.cs">
+      <DependentUpon>SelectSchedule.xaml</DependentUpon>
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="Discipline\Schedule\BuildSIWP\ComponentGrouping.xaml.cs">
+      <DependentUpon>ComponentGrouping.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Discipline\Schedule\BuildSIWP\ScheduleComponents.xaml.cs">
+      <DependentUpon>ScheduleComponents.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Discipline\Schedule\BuildSIWP\SelectSIWP.xaml.cs">
+      <DependentUpon>SelectSIWP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Discipline\Schedule\ManageSchedule\ManageSchedule.xaml.cs">
+      <DependentUpon>ManageSchedule.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Discipline\Schedule\ManageSchedule\ManpowerLoading.xaml.cs">
+      <DependentUpon>ManpowerLoading.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Discipline\Schedule\ManageSchedule\ProjectSchedule.xaml.cs">
+      <DependentUpon>ProjectSchedule.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Discipline\Schedule\ManageSchedule\SelectCWP.xaml.cs">
+      <DependentUpon>SelectCWP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Discipline\Schedule\ManageSchedule\SelectSchedule.xaml.cs">
+      <DependentUpon>SelectSchedule.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Discipline\Schedule\ManageSchedule\SubMenu.xaml.cs">
+      <DependentUpon>SubMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Discipline\TimeProgress\TimeSheet.xaml.cs">
+      <DependentUpon>TimeSheet.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Discipline\TurnOver\MCCertificate.xaml.cs">
+      <DependentUpon>MCCertificate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Discipline\TurnOver\TurnoverSystem.xaml.cs">
+      <DependentUpon>TurnoverSystem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Discipline\Viewer\DrawingGridViewer.xaml.cs">
+      <DependentUpon>DrawingGridViewer.xaml</DependentUpon>
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="Discipline\Viewer\IWPGridViewer.xaml.cs">
+      <DependentUpon>IWPGridViewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\CommonDataSource.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="Lib\Common\OZReportCommandListenerImpl.cs" />
+    <Compile Include="Lib\Common\ReportDS.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Lib\Common\ReportUtil.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Lib\Constant.cs" />
+    <Compile Include="Lib\MainMenuDataSource.cs" />
+    <Compile Include="Lib\ServiceModel\WorkflowModel.cs" />
+    <Compile Include="Lib\UI\CSUDetail.xaml.cs">
+      <DependentUpon>CSUDetail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\UI\CSUOption.xaml.cs">
+      <DependentUpon>CSUOption.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\UI\HydroDetail.xaml.cs">
+      <DependentUpon>HydroDetail.xaml</DependentUpon>
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="Lib\UI\HydroOption.xaml.cs">
+      <DependentUpon>HydroOption.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\UI\OZReportForm.xaml.cs">
+      <DependentUpon>OZReportForm.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Lib\UI\AssembleButtonBar.xaml.cs">
+      <DependentUpon>AssembleButtonBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\UI\Turnoverappbar.xaml.cs">
+      <DependentUpon>Turnoverappbar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\UI\TurnoverbinderOption.xaml.cs">
+      <DependentUpon>TurnoverbinderOption.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\UI\TurnoverEditor.xaml.cs">
+      <DependentUpon>TurnoverEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\WizardDataSource.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="Lib\MTODataSource.cs" />
+    <Compile Include="Lib\CWPDataSource.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="Lib\DrawingDataSource.cs" />
+    <Compile Include="Lib\IWPDataSource.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="Lib\ProjectModuleSource.cs" />
+    <Compile Include="Lib\ScheduleDataSource.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="Lib\ServiceModel\CommonModel.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="Lib\ServiceModel\ProjectModel.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="Lib\ServiceModel\UserModel.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="Lib\SubMenuDataSource.cs" />
+    <Compile Include="Lib\UI\MtoTestDrawing.xaml.cs">
+      <DependentUpon>MtoTestDrawing.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\UI\SelectTimeSheet.xaml.cs">
+      <DependentUpon>SelectTimeSheet.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\UI\SIWPDetail.xaml.cs">
+      <DependentUpon>SIWPDetail.xaml</DependentUpon>
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="Lib\UI\IWPViewItem.xaml.cs">
+      <DependentUpon>IWPViewItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\UI\DrawingViewItem.xaml.cs">
+      <DependentUpon>DrawingViewItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\UI\DrawingGrouping.xaml.cs">
+      <DependentUpon>DrawingGrouping.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\UI\DrawingInfo.xaml.cs">
+      <DependentUpon>DrawingInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\UI\DrawingSorting.xaml.cs">
+      <DependentUpon>DrawingSorting.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\UI\IWPDetail.xaml.cs">
+      <DependentUpon>IWPDetail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\UI\IWPOption.xaml.cs">
+      <DependentUpon>IWPOption.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\UI\IWPScheduleDetail.xaml.cs">
+      <DependentUpon>IWPScheduleDetail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\UI\ScheduleDetail_BAK.xaml.cs">
+      <DependentUpon>ScheduleDetail_BAK.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\UI\DefaultViewItem.xaml.cs">
+      <DependentUpon>DefaultViewItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\UI\FlipViewItem.xaml.cs">
+      <DependentUpon>FlipViewItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\UI\ScheduleDetail.xaml.cs">
+      <DependentUpon>ScheduleDetail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\UI\SIWPOption.xaml.cs">
+      <DependentUpon>SIWPOption.xaml</DependentUpon>
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="Lib\UI\TimeSheetTotal.xaml.cs">
+      <DependentUpon>TimeSheetTotal.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\WorkFlowDataSource.cs" />
+    <Compile Include="Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainMenu.xaml.cs">
+      <DependentUpon>MainMenu.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+    <None Include="Assets\Default.png.thumbnail" />
+    <None Include="custom_ui\vssver.scc" />
+    <None Include="Element.Reveal.TrueTask_TemporaryKey.pfx" />
+    <None Include="packages.config" />
+    <None Include="res\vssver.scc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\approve.png" />
+    <Content Include="Assets\assemble_icon_consumablelist.png" />
+    <Content Include="Assets\assemble_icon_coverpage.png" />
+    <Content Include="Assets\assemble_icon_equipmentlist.png" />
+    <Content Include="Assets\assemble_icon_itrlist.png" />
+    <Content Include="Assets\assemble_icon_iwpsummary.png" />
+    <Content Include="Assets\assemble_icon_MOC.png" />
+    <Content Include="Assets\assemble_icon_safetycheklist.png" />
+    <Content Include="Assets\assemble_icon_safetyformlist.png" />
+    <Content Include="Assets\assemble_icon_safetylist.png" />
+    <Content Include="Assets\assemble_icon_scaffoldchecklist.png" />
+    <Content Include="Assets\assemble_icon_selectapprover.png" />
+    <Content Include="Assets\assemble_icon_specsndetails.png" />
+    <Content Include="Assets\assigntoschedule_btn_confirm.png" />
+    <Content Include="Assets\assign_off.png" />
+    <Content Include="Assets\assign_on.png" />
+    <Content Include="Assets\BackGround2.jpg" />
+    <Content Include="Assets\btn_active_accept.png" />
+    <Content Include="Assets\btn_active_add.png" />
+    <Content Include="Assets\btn_active_AssignComponents.png" />
+    <Content Include="Assets\btn_active_change.png" />
+    <Content Include="Assets\btn_active_closed.png" />
+    <Content Include="Assets\btn_active_clrselection.png" />
+    <Content Include="Assets\btn_active_CompleteAssembleIWP.png" />
+    <Content Include="Assets\btn_active_continuebuild.png" />
+    <Content Include="Assets\btn_active_delete.png" />
+    <Content Include="Assets\btn_active_details.png" />
+    <Content Include="Assets\btn_active_download.png" />
+    <Content Include="Assets\btn_active_iwpsignoff.png" />
+    <Content Include="Assets\btn_active_iwpviewer.png" />
+    <Content Include="Assets\btn_active_markup.png" />
+    <Content Include="Assets\btn_active_next.png" />
+    <Content Include="Assets\btn_active_notify.png" />
+    <Content Include="Assets\btn_active_reassembleiwp.png" />
+    <Content Include="Assets\btn_active_refdrawing.png" />
+    <Content Include="Assets\btn_active_reject.png" />
+    <Content Include="Assets\btn_active_removeapprover.png" />
+    <Content Include="Assets\btn_active_save.png" />
+    <Content Include="Assets\btn_active_signoffhistory.png" />
+    <Content Include="Assets\btn_active_toolboxtopic.png" />
+    <Content Include="Assets\btn_active_upload.png" />
+    <Content Include="Assets\btn_active_viewcontent.png" />
+    <Content Include="Assets\btn_assembleCSUworkpackage.png" />
+    <Content Include="Assets\btn_assembleCSUworkpackage_o.png" />
+    <Content Include="Assets\btn_assemblehydrotestworkpackage.png" />
+    <Content Include="Assets\btn_assemblehydrotestworkpackage_o.png" />
+    <Content Include="Assets\btn_buildCSUworkpackage.png" />
+    <Content Include="Assets\btn_buildCSUworkpackage_o.png" />
+    <Content Include="Assets\btn_buildhydrotestworkpackage.png" />
+    <Content Include="Assets\btn_buildhydrotestworkpackage_o.png" />
+    <Content Include="Assets\btn_changeCnSUworkpackage.png" />
+    <Content Include="Assets\btn_changeCnSUworkpackage_o.png" />
+    <Content Include="Assets\btn_changehydrotestworkpackage.png" />
+    <Content Include="Assets\btn_changehydrotestworkpackage_o.png" />
+    <Content Include="Assets\btn_deactive_accept.png" />
+    <Content Include="Assets\btn_deactive_add.png" />
+    <Content Include="Assets\btn_deactive_AssignComponents.png" />
+    <Content Include="Assets\btn_deactive_change.png" />
+    <Content Include="Assets\btn_deactive_clrselection.png" />
+    <Content Include="Assets\btn_deactive_CompleteAssembleIWP.png" />
+    <Content Include="Assets\btn_deactive_continuebuild.png" />
+    <Content Include="Assets\btn_deactive_delete.png" />
+    <Content Include="Assets\btn_deactive_details.png" />
+    <Content Include="Assets\btn_deactive_download.png" />
+    <Content Include="Assets\btn_deactive_iwpsignoff.png" />
+    <Content Include="Assets\btn_deactive_iwpviewer.png" />
+    <Content Include="Assets\btn_deactive_markup.png" />
+    <Content Include="Assets\btn_deactive_next.png" />
+    <Content Include="Assets\btn_deactive_notify.png" />
+    <Content Include="Assets\btn_deactive_reassembleiwp.png" />
+    <Content Include="Assets\btn_deactive_refdrawing.png" />
+    <Content Include="Assets\btn_deactive_reject.png" />
+    <Content Include="Assets\btn_deactive_removeapprover.png" />
+    <Content Include="Assets\btn_deactive_save.png" />
+    <Content Include="Assets\btn_deactive_signoffhistory.png" />
+    <Content Include="Assets\btn_deactive_toolboxtopic.png" />
+    <Content Include="Assets\btn_deactive_upload.png" />
+    <Content Include="Assets\btn_deactive_viewcontent.png" />
+    <Content Include="Assets\btn_pressed_accept.png" />
+    <Content Include="Assets\btn_pressed_add.png" />
+    <Content Include="Assets\btn_pressed_AssignComponents.png" />
+    <Content Include="Assets\btn_pressed_change.png" />
+    <Content Include="Assets\btn_pressed_closed.png" />
+    <Content Include="Assets\btn_pressed_clrselection.png" />
+    <Content Include="Assets\btn_pressed_CompleteAssembleIWP.png" />
+    <Content Include="Assets\btn_pressed_continuebuild.png" />
+    <Content Include="Assets\btn_pressed_delete.png" />
+    <Content Include="Assets\btn_pressed_details.png" />
+    <Content Include="Assets\btn_pressed_download.png" />
+    <Content Include="Assets\btn_pressed_iwpsignoff.png" />
+    <Content Include="Assets\btn_pressed_iwpviewer.png" />
+    <Content Include="Assets\btn_pressed_markup.png" />
+    <Content Include="Assets\btn_pressed_next.png" />
+    <Content Include="Assets\btn_pressed_notify.png" />
+    <Content Include="Assets\btn_pressed_reassembleiwp.png" />
+    <Content Include="Assets\btn_pressed_refdrawing.png" />
+    <Content Include="Assets\btn_pressed_reject.png" />
+    <Content Include="Assets\btn_pressed_removeapprover.png" />
+    <Content Include="Assets\btn_pressed_save.png" />
+    <Content Include="Assets\btn_pressed_signoffhistory.png" />
+    <Content Include="Assets\btn_pressed_toolboxtopic.png" />
+    <Content Include="Assets\btn_pressed_upload.png" />
+    <Content Include="Assets\btn_pressed_viewcontent.png" />
+    <Content Include="Assets\close.png" />
+    <Content Include="Assets\common_bg.jpg" />
+    <Content Include="Assets\common_btn_addtoiwp.png" />
+    <Content Include="Assets\common_btn_addtoiwp_o.png" />
+    <Content Include="Assets\common_btn_cancel.png" />
+    <Content Include="Assets\common_btn_cancel_o.png" />
+    <Content Include="Assets\common_btn_loadimage.png" />
+    <Content Include="Assets\common_btn_loadimage_o.png" />
+    <Content Include="Assets\common_btn_next.png" />
+    <Content Include="Assets\common_btn_next_o.png" />
+    <Content Include="Assets\common_btn_removefromiwp.png" />
+    <Content Include="Assets\common_btn_removefromiwp_o.png" />
+    <Content Include="Assets\common_btn_return.png" />
+    <Content Include="Assets\common_btn_return_o.png" />
+    <Content Include="Assets\common_btn_save.png" />
+    <Content Include="Assets\common_btn_save_o.png" />
+    <Content Include="Assets\common_btn_submit.png" />
+    <Content Include="Assets\common_btn_submit_o.png" />
+    <Content Include="Assets\common_default_crew.png" />
+    <Content Include="Assets\common_default_foreman.png" />
+    <Content Include="Assets\common_default_generalforeman.png" />
+    <Content Include="Assets\common_default_superintendant.png" />
+    <Content Include="Assets\common_default_user.png" />
+    <Content Include="Assets\common_icon_search01.png" />
+    <Content Include="Assets\common_rightbar_btn_close.png" />
+    <Content Include="Assets\common_rightbar_btn_open.png" />
+    <Content Include="Assets\componentgrouping_bg.png" />
+    <Content Include="Assets\componentgrouping_btn_assigncomponents.png" />
+    <Content Include="Assets\componentgrouping_btn_assigncomponents_o.png" />
+    <Content Include="Assets\componentgrouping_btn_clearselection.png" />
+    <Content Include="Assets\componentgrouping_btn_clearselection_o.png" />
+    <Content Include="Assets\cwp.png" />
+    <Content Include="Assets\DarkGray.png" />
+    <Content Include="Assets\Default.JPG" />
+    <Content Include="Assets\Default.png" />
+    <Content Include="Assets\DefaultCrew.png" />
+    <Content Include="Assets\Default_loading.png" />
+    <Content Include="Assets\displayperiod_1mon.png" />
+    <Content Include="Assets\displayperiod_1mon_d.png" />
+    <Content Include="Assets\displayperiod_2mon.png" />
+    <Content Include="Assets\displayperiod_2mon_o.png" />
+    <Content Include="Assets\displayperiod_3mon.png" />
+    <Content Include="Assets\displayperiod_3mon_o.png" />
+    <Content Include="Assets\download.jpg" />
+    <Content Include="Assets\ElementLogo 120X120.png" />
+    <Content Include="Assets\exit.png" />
+    <Content Include="Assets\generalforeman.png" />
+    <Content Include="Assets\icon_AssociatedDocument.png" />
+    <Content Include="Assets\icon_PnID.png" />
+    <Content Include="Assets\icon_PSSRs.png" />
+    <Content Include="Assets\IWPviewer_topicon_IWPview.png" />
+    <Content Include="Assets\IWPviewer_topicon_print.png" />
+    <Content Include="Assets\LightGray.png" />
+    <Content Include="Assets\loaddataforeachsectionofiwpreport_bg.jpg" />
+    <Content Include="Assets\loaddataforeachsectionofiwpreport_icon_consumablematerial.png" />
+    <Content Include="Assets\loaddataforeachsectionofiwpreport_icon_fieldequipment.png" />
+    <Content Include="Assets\loaddataforeachsectionofiwpreport_icon_inspectiontestrecord.png" />
+    <Content Include="Assets\loaddataforeachsectionofiwpreport_icon_loadsiteplan.png" />
+    <Content Include="Assets\loaddataforeachsectionofiwpreport_icon_saftydocument.png" />
+    <Content Include="Assets\loaddataforeachsectionofiwpreport_icon_scope.png" />
+    <Content Include="Assets\loadsiteimage_bg.jpg" />
+    <Content Include="Assets\login_logotype.png" />
+    <Content Include="Assets\Logo.scale-100.png" />
+    <Content Include="Assets\Logo.scale-140.png" />
+    <Content Include="Assets\Logo.scale-180.png" />
+    <Content Include="Assets\Logo.scale-80.png" />
+    <Content Include="Assets\manageschedule_btn_left.png" />
+    <Content Include="Assets\manageschedule_btn_pan.png" />
+    <Content Include="Assets\manageschedule_btn_right.png" />
+    <Content Include="Assets\manageshedule_bg.png" />
+    <Content Include="Assets\manageshedule_default_manpowerloading.png" />
+    <Content Include="Assets\manageshedule_default_packageschedule.png" />
+    <Content Include="Assets\manageshedule_default_projectschedule.png" />
+    <Content Include="Assets\manpowerloading_bg.png" />
+    <Content Include="Assets\manpowerloading_btn_download.png" />
+    <Content Include="Assets\manpowerloading_btn_download_o.png" />
+    <Content Include="Assets\manpowerloading_btn_print.png" />
+    <Content Include="Assets\manpowerloading_btn_print_o.png" />
+    <Content Include="Assets\MediumGray.png" />
+    <Content Include="Assets\Menu\approval_hub.jpg" />
+    <Content Include="Assets\Menu\download_itr.jpg" />
+    <Content Include="Assets\Menu\fillout_hub.jpg" />
+    <Content Include="Assets\Menu\submit_hub.jpg" />
+    <Content Include="Assets\next.jpg" />
+    <Content Include="Assets\next.png" />
+    <Content Include="Assets\packcomponents_bg.png" />
+    <Content Include="Assets\packcomponents_btn_move01.png" />
+    <Content Include="Assets\packcomponents_btn_move01_o.png" />
+    <Content Include="Assets\packcomponents_btn_move02.png" />
+    <Content Include="Assets\packcomponents_btn_move02_o.png" />
+    <Content Include="Assets\packcomponents_btn_selectall.png" />
+    <Content Include="Assets\packcomponents_btn_selectall_o.png" />
+    <Content Include="Assets\packcomponents_default_workpackage.png" />
+    <Content Include="Assets\PL93-P-8000-1_R2A.thumbnail.jpg" />
+    <Content Include="Assets\PL93-P-8002-1_R2A.thumbnail.jpg" />
+    <Content Include="Assets\prev.png" />
+    <Content Include="Assets\reavealtruetask_bg.png" />
+    <Content Include="Assets\reject.png" />
+    <Content Include="Assets\save.jpg" />
+    <Content Include="Assets\scopereport_bg.jpg" />
+    <Content Include="Assets\search.png" />
+    <Content Include="Assets\selectall_off.png" />
+    <Content Include="Assets\selectall_on.png" />
+    <Content Include="Assets\selectconstructionworkpackage_bg.png" />
+    <Content Include="Assets\selectconstructionworkpackage_default_cwp.png" />
+    <Content Include="Assets\selectcwp_btn_bsiwp.png" />
+    <Content Include="Assets\selectcwp_btn_bsiwp_o.png" />
+    <Content Include="Assets\selectiwptobuildbinder_bg.jpg" />
+    <Content Include="Assets\selectiwptobuildbinder_cwp.png" />
+    <Content Include="Assets\selectiwptobuildbinder_default_iwp.png" />
+    <Content Include="Assets\selectiwp_default_iwp.png" />
+    <Content Include="Assets\selectschedulelineitem_bg.png" />
+    <Content Include="Assets\selectschedulelineitem_btn_changegeneralforeman.png" />
+    <Content Include="Assets\selectschedulelineitem_btn_changegeneralforeman_btn_movetocomponentgrouping.png" />
+    <Content Include="Assets\selectschedulelineitem_btn_changegeneralforeman_btn_movetocomponentgrouping_o.png" />
+    <Content Include="Assets\selectschedulelineitem_btn_changegeneralforeman_o.png" />
+    <Content Include="Assets\selectschedulelineitem_btn_changeiwp.png" />
+    <Content Include="Assets\selectschedulelineitem_btn_changeiwp_o.png" />
+    <Content Include="Assets\selectschedulelineitem_btn_changesiwp.png" />
+    <Content Include="Assets\selectschedulelineitem_btn_changesiwp_o.png" />
+    <Content Include="Assets\selectschedulelineitem_btn_movetosystemselection.png" />
+    <Content Include="Assets\selectschedulelineitem_btn_movetosystemselection_o.png" />
+    <Content Include="Assets\selectschedulelineitem_dotline.png" />
+    <Content Include="Assets\selectschedulelineitem_line.png" />
+    <Content Include="Assets\selectshedulelineitemtomanage_btn_calendar.png" />
+    <Content Include="Assets\sigma_truetask.png" />
+    <Content Include="Assets\SmallLogo.png" />
+    <Content Include="Assets\SplashScreen.scale-100.png" />
+    <Content Include="Assets\SplashScreen.scale-140.png" />
+    <Content Include="Assets\SplashScreen.scale-180.png" />
+    <Content Include="Assets\squares.png" />
+    <Content Include="Assets\statusdeviderline.png" />
+    <Content Include="Assets\status_arrow.png" />
+    <Content Include="Assets\status_complete.png" />
+    <Content Include="Assets\status_notsent.png" />
+    <Content Include="Assets\status_pending.png" />
+    <Content Include="Assets\status_rejected.png" />
+    <Content Include="Assets\StoreLogo.png" />
+    <Content Include="Assets\submit.jpg" />
+    <Content Include="Assets\table_dropdown_arrow.png" />
+    <Content Include="Assets\transparency400x300.png" />
+    <Content Include="Assets\truetask_icon_AssembleCSUworkpackage.png" />
+    <Content Include="Assets\truetask_icon_assemblehydropackage.png" />
+    <Content Include="Assets\truetask_icon_assembleiwp.png" />
+    <Content Include="Assets\truetask_icon_assemblesiwp.png" />
+    <Content Include="Assets\truetask_icon_assignmentpunch.png" />
+    <Content Include="Assets\truetask_icon_BuildCSUworkpackage.png" />
+    <Content Include="Assets\truetask_icon_buildhydropackage.png" />
+    <Content Include="Assets\truetask_icon_buildiwp.png" />
+    <Content Include="Assets\truetask_icon_buildschedule.png" />
+    <Content Include="Assets\truetask_icon_buildsiwp.png" />
+    <Content Include="Assets\truetask_icon_crewprogressandproductivity.png" />
+    <Content Include="Assets\truetask_icon_CSUViewer.png" />
+    <Content Include="Assets\truetask_icon_drawingviewer.png" />
+    <Content Include="Assets\truetask_icon_hydropackageviewer.png" />
+    <Content Include="Assets\truetask_icon_ITR.png" />
+    <Content Include="Assets\truetask_icon_ITRSummaryreport.png" />
+    <Content Include="Assets\truetask_icon_iwpsignoff.png" />
+    <Content Include="Assets\truetask_icon_iwpviewer.png" />
+    <Content Include="Assets\truetask_icon_maintainiwp.png" />
+    <Content Include="Assets\truetask_icon_manageiwp.png" />
+    <Content Include="Assets\truetask_icon_manageschedule.png" />
+    <Content Include="Assets\truetask_icon_MTO.png" />
+    <Content Include="Assets\truetask_icon_projectplanedvsactualearned.png" />
+    <Content Include="Assets\truetask_icon_punchlistcard.png" />
+    <Content Include="Assets\truetask_icon_Punchstatusreport.png" />
+    <Content Include="Assets\truetask_icon_scheduleprogressandproductivity.png" />
+    <Content Include="Assets\truetask_icon_signoffstatus.png" />
+    <Content Include="Assets\truetask_icon_siwpviewer.png" />
+    <Content Include="Assets\truetask_icon_turnoverbinder.png" />
+    <Content Include="Assets\truetask_icon_turnoversystem.png" />
+    <Content Include="Assets\truetask_icon_walkdown.png" />
+    <Content Include="Assets\truetask_starticon_120x120.png" />
+    <Content Include="Assets\truetask_starticon_150x150.png" />
+    <Content Include="Assets\truetask_starticon_210x210.png" />
+    <Content Include="Assets\truetask_starticon_270x270.png" />
+    <Content Include="Assets\unassign_off.png" />
+    <Content Include="Assets\unassign_on.png" />
+    <Content Include="Assets\viewer_bg.png" />
+    <Content Include="Assets\WideLogo.scale-100.png" />
+    <Content Include="Assets\WideLogo.scale-140.png" />
+    <Content Include="Assets\WideLogo.scale-180.png" />
+    <Content Include="Assets\WideLogo.scale-80.png" />
+    <Content Include="Assets\workpackage.png" />
+    <Content Include="custom_ui\default_sign_bg.png" />
+    <Content Include="custom_ui\oz_sign_btn_clear.png" />
+    <Content Include="custom_ui\oz_sign_btn_clear_default.png" />
+    <Content Include="custom_ui\oz_sign_btn_close.png" />
+    <Content Include="custom_ui\oz_sign_btn_close_default.png" />
+    <Content Include="Lib\Data\MainMenu.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="res\bt01.scale-100.png" />
+    <Content Include="res\bt01.scale-140.png" />
+    <Content Include="res\bt01.scale-180.png" />
+    <Content Include="res\bt02.scale-100.png" />
+    <Content Include="res\bt02.scale-140.png" />
+    <Content Include="res\bt02.scale-180.png" />
+    <Content Include="res\bt03.scale-100.png" />
+    <Content Include="res\bt03.scale-140.png" />
+    <Content Include="res\bt03.scale-180.png" />
+    <Content Include="res\bt04.scale-100.png" />
+    <Content Include="res\bt04.scale-140.png" />
+    <Content Include="res\bt04.scale-180.png" />
+    <Content Include="res\bt05.scale-100.png" />
+    <Content Include="res\bt05.scale-140.png" />
+    <Content Include="res\bt05.scale-180.png" />
+    <Content Include="res\bt06.scale-100.png" />
+    <Content Include="res\bt06.scale-140.png" />
+    <Content Include="res\bt06.scale-180.png" />
+    <Content Include="res\bt07.scale-100.png" />
+    <Content Include="res\bt07.scale-140.png" />
+    <Content Include="res\bt07.scale-180.png" />
+    <Content Include="res\bt08.scale-100.png" />
+    <Content Include="res\bt08.scale-140.png" />
+    <Content Include="res\bt08.scale-180.png" />
+    <Content Include="res\bt09.scale-100.png" />
+    <Content Include="res\bt09.scale-140.png" />
+    <Content Include="res\bt09.scale-180.png" />
+    <Content Include="res\bt10.scale-100.png" />
+    <Content Include="res\bt10.scale-140.png" />
+    <Content Include="res\bt10.scale-180.png" />
+    <Content Include="res\bt11.scale-100.png" />
+    <Content Include="res\bt11.scale-140.png" />
+    <Content Include="res\bt11.scale-180.png" />
+    <Content Include="res\bt12.scale-100.png" />
+    <Content Include="res\bt12.scale-140.png" />
+    <Content Include="res\bt12.scale-180.png" />
+    <Content Include="res\bt13.scale-100.png" />
+    <Content Include="res\bt13.scale-140.png" />
+    <Content Include="res\bt13.scale-180.png" />
+    <Content Include="res\bt14.scale-100.png" />
+    <Content Include="res\bt14.scale-140.png" />
+    <Content Include="res\bt14.scale-180.png" />
+    <Content Include="res\bt15.scale-100.png" />
+    <Content Include="res\bt15.scale-140.png" />
+    <Content Include="res\bt15.scale-180.png" />
+    <Content Include="res\bt16.scale-100.png" />
+    <Content Include="res\bt16.scale-140.png" />
+    <Content Include="res\bt16.scale-180.png" />
+    <Content Include="res\bt17.scale-100.png" />
+    <Content Include="res\bt17.scale-140.png" />
+    <Content Include="res\bt17.scale-180.png" />
+    <Content Include="res\bt18.scale-100.png" />
+    <Content Include="res\bt18.scale-140.png" />
+    <Content Include="res\bt18.scale-180.png" />
+    <Content Include="res\bt19.scale-100.png" />
+    <Content Include="res\bt19.scale-140.png" />
+    <Content Include="res\bt19.scale-180.png" />
+    <Content Include="res\bt20.scale-100.png" />
+    <Content Include="res\bt20.scale-140.png" />
+    <Content Include="res\bt20.scale-180.png" />
+    <Content Include="res\bt21.scale-100.png" />
+    <Content Include="res\bt21.scale-140.png" />
+    <Content Include="res\bt21.scale-180.png" />
+    <Content Include="res\bt22.scale-100.png" />
+    <Content Include="res\bt22.scale-140.png" />
+    <Content Include="res\bt22.scale-180.png" />
+    <Content Include="res\bt23.scale-100.png" />
+    <Content Include="res\bt23.scale-140.png" />
+    <Content Include="res\bt23.scale-180.png" />
+    <Content Include="res\bt24.scale-100.png" />
+    <Content Include="res\bt24.scale-140.png" />
+    <Content Include="res\bt24.scale-180.png" />
+    <Content Include="res\bt25.scale-100.png" />
+    <Content Include="res\bt25.scale-140.png" />
+    <Content Include="res\bt25.scale-180.png" />
+    <Content Include="res\bt26.scale-100.png" />
+    <Content Include="res\bt26.scale-140.png" />
+    <Content Include="res\bt26.scale-180.png" />
+    <Content Include="res\bt27.scale-100.png" />
+    <Content Include="res\bt27.scale-140.png" />
+    <Content Include="res\bt27.scale-180.png" />
+    <Content Include="res\bt28.scale-100.png" />
+    <Content Include="res\bt28.scale-140.png" />
+    <Content Include="res\bt28.scale-180.png" />
+    <Content Include="res\bt29.scale-100.png" />
+    <Content Include="res\bt29.scale-140.png" />
+    <Content Include="res\bt29.scale-180.png" />
+    <Content Include="res\bt30.scale-100.png" />
+    <Content Include="res\bt30.scale-140.png" />
+    <Content Include="res\bt30.scale-180.png" />
+    <Content Include="res\bt31.scale-100.png" />
+    <Content Include="res\bt31.scale-140.png" />
+    <Content Include="res\bt31.scale-180.png" />
+    <Content Include="res\bt32.scale-100.png" />
+    <Content Include="res\bt32.scale-140.png" />
+    <Content Include="res\bt32.scale-180.png" />
+    <Content Include="res\bt33.scale-100.png" />
+    <Content Include="res\bt33.scale-140.png" />
+    <Content Include="res\bt33.scale-180.png" />
+    <Content Include="res\bt34.scale-100.png" />
+    <Content Include="res\bt34.scale-140.png" />
+    <Content Include="res\bt34.scale-180.png" />
+    <Content Include="res\bt35.scale-100.png" />
+    <Content Include="res\bt35.scale-140.png" />
+    <Content Include="res\bt35.scale-180.png" />
+    <Content Include="res\bt36.scale-100.png" />
+    <Content Include="res\bt36.scale-140.png" />
+    <Content Include="res\bt36.scale-180.png" />
+    <Content Include="res\bt37.scale-100.png" />
+    <Content Include="res\bt37.scale-140.png" />
+    <Content Include="res\bt37.scale-180.png" />
+    <Content Include="res\bt38.scale-100.png" />
+    <Content Include="res\bt38.scale-140.png" />
+    <Content Include="res\bt38.scale-180.png" />
+    <Content Include="res\bt39.scale-100.png" />
+    <Content Include="res\bt39.scale-140.png" />
+    <Content Include="res\bt39.scale-180.png" />
+    <Content Include="res\bt40.scale-100.png" />
+    <Content Include="res\bt40.scale-140.png" />
+    <Content Include="res\bt40.scale-180.png" />
+    <Content Include="res\bt41.scale-100.png" />
+    <Content Include="res\bt41.scale-140.png" />
+    <Content Include="res\bt41.scale-180.png" />
+    <Content Include="res\bt42.scale-100.png" />
+    <Content Include="res\bt42.scale-140.png" />
+    <Content Include="res\bt42.scale-180.png" />
+    <Content Include="res\bt43.scale-100.png" />
+    <Content Include="res\bt43.scale-140.png" />
+    <Content Include="res\bt43.scale-180.png" />
+    <Content Include="res\bt44.scale-100.png" />
+    <Content Include="res\bt44.scale-140.png" />
+    <Content Include="res\bt44.scale-180.png" />
+    <Content Include="res\bt45.scale-100.png" />
+    <Content Include="res\bt45.scale-140.png" />
+    <Content Include="res\bt45.scale-180.png" />
+    <Content Include="res\bt46.scale-100.png" />
+    <Content Include="res\bt46.scale-140.png" />
+    <Content Include="res\bt46.scale-180.png" />
+    <Content Include="res\bt47.scale-100.png" />
+    <Content Include="res\bt47.scale-140.png" />
+    <Content Include="res\bt47.scale-180.png" />
+    <Content Include="res\bt48.scale-100.png" />
+    <Content Include="res\bt48.scale-140.png" />
+    <Content Include="res\bt48.scale-180.png" />
+    <Content Include="res\bt49.scale-100.png" />
+    <Content Include="res\bt49.scale-140.png" />
+    <Content Include="res\bt49.scale-180.png" />
+    <Content Include="res\bt50.scale-100.png" />
+    <Content Include="res\bt50.scale-140.png" />
+    <Content Include="res\bt50.scale-180.png" />
+    <Content Include="res\bt52.scale-100.png" />
+    <Content Include="res\bt52.scale-140.png" />
+    <Content Include="res\bt52.scale-180.png" />
+    <Content Include="res\chartres_ar_SA.xml" />
+    <Content Include="res\chartres_en_US.xml" />
+    <Content Include="res\chartres_ja_JP.xml" />
+    <Content Include="res\chartres_ko_KR.xml" />
+    <Content Include="res\chartres_ru_RU.xml" />
+    <Content Include="res\chartres_zh_CN.xml" />
+    <Content Include="res\chartres_zh_TW.xml" />
+    <Content Include="res\comment01.scale-100.png" />
+    <Content Include="res\comment01.scale-140.png" />
+    <Content Include="res\comment01.scale-180.png" />
+    <Content Include="res\comment01_sel.scale-100.png" />
+    <Content Include="res\comment01_sel.scale-140.png" />
+    <Content Include="res\comment01_sel.scale-180.png" />
+    <Content Include="res\comment02.scale-100.png" />
+    <Content Include="res\comment02.scale-140.png" />
+    <Content Include="res\comment02.scale-180.png" />
+    <Content Include="res\comment02_sel.scale-100.png" />
+    <Content Include="res\comment02_sel.scale-140.png" />
+    <Content Include="res\comment02_sel.scale-180.png" />
+    <Content Include="res\comment03.scale-100.png" />
+    <Content Include="res\comment03.scale-140.png" />
+    <Content Include="res\comment03.scale-180.png" />
+    <Content Include="res\comment03_sel.scale-100.png" />
+    <Content Include="res\comment03_sel.scale-140.png" />
+    <Content Include="res\comment03_sel.scale-180.png" />
+    <Content Include="res\comment04.scale-100.png" />
+    <Content Include="res\comment04.scale-140.png" />
+    <Content Include="res\comment04.scale-180.png" />
+    <Content Include="res\comment04_sel.scale-100.png" />
+    <Content Include="res\comment04_sel.scale-140.png" />
+    <Content Include="res\comment04_sel.scale-180.png" />
+    <Content Include="res\comment05.scale-100.png" />
+    <Content Include="res\comment05.scale-140.png" />
+    <Content Include="res\comment05.scale-180.png" />
+    <Content Include="res\comment05_sel.scale-100.png" />
+    <Content Include="res\comment05_sel.scale-140.png" />
+    <Content Include="res\comment05_sel.scale-180.png" />
+    <Content Include="res\default_btn_confirm%402x.png" />
+    <Content Include="res\default_btn_confirm.png" />
+    <Content Include="res\default_btn_init%402x.png" />
+    <Content Include="res\default_btn_init.png" />
+    <Content Include="res\default_sign_bg.png" />
+    <Content Include="res\icon.png" />
+    <Content Include="res\infomation.png" />
+    <Content Include="res\rec.png" />
+    <Content Include="res\viewer.png" />
+    <Content Include="res\viewer_error_msg_ar_SA.xml" />
+    <Content Include="res\viewer_error_msg_en_US.xml" />
+    <Content Include="res\viewer_error_msg_ja_JP.xml" />
+    <Content Include="res\viewer_error_msg_ko_KR.xml" />
+    <Content Include="res\viewer_error_msg_ru_RU.xml" />
+    <Content Include="res\viewer_error_msg_zh_CN.xml" />
+    <Content Include="res\viewer_error_msg_zh_TW.xml" />
+    <Content Include="res\viewer_server_error_msg_ar_SA.xml" />
+    <Content Include="res\viewer_server_error_msg_en_US.xml" />
+    <Content Include="res\viewer_server_error_msg_ja_JP.xml" />
+    <Content Include="res\viewer_server_error_msg_ko_KR.xml" />
+    <Content Include="res\viewer_server_error_msg_ru_RU.xml" />
+    <Content Include="res\viewer_server_error_msg_zh_CN.xml" />
+    <Content Include="res\viewer_server_error_msg_zh_TW.xml" />
+    <Content Include="res\viewer_string_resource_ja_JP.xml" />
+    <Content Include="res\viewer_string_resource_ko_KR.xml" />
+    <Content Include="res\viewer_string_resource_ru_RU.xml" />
+    <Content Include="res\viewer_string_resource_zh_cn.xml" />
+    <Content Include="res\viewer_string_resource_zh_TW.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="Discipline\IWPSignoff\IWPSignoffStatus.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Discipline\IWPSignoff\SelectApprover.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Discipline\IWPSignoff\SelectTask.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Discipline\IWPSignoff\SignoffTitle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Discipline\MTO\DrawingViewerMarkup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Discipline\MTO\SelectLibrary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Discipline\MTO\DrawingViewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Discipline\MTO\SelectType.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Discipline\MTO\MaterialTakeoff.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Discipline\MTO\MTOScreenTest.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Discipline\MTO\ThumbnailViewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Discipline\MTO\SelectCWP.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Discipline\Schedule\AssembleIWP\AssembleDocument.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Discipline\Schedule\AssembleIWP\AssembleIWP.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Discipline\Schedule\AssembleIWP\AssembleReport.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Discipline\Schedule\AssembleIWP\ConsumableMaterial.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Discipline\Schedule\AssembleIWP\SelectIWP.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Discipline\Schedule\AssembleIWP\FieldEquipment.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Discipline\Schedule\AssembleIWP\LoadSitePlan.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Discipline\Schedule\AssembleIWP\SelectCWP.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Discipline\Schedule\AssembleIWP\SelectCWPIWP.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Discipline\Schedule\AssembleIWP\SelectSchedule.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Discipline\Schedule\BuildCSU\AssembleCSU.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Discipline\Schedule\BuildCSU\AssociatedDocument.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Discipline\Schedule\BuildCSU\PSSRS.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Discipline\Schedule\BuildCSU\SelectCSU.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Discipline\Schedule\BuildCSU\SelectDrawing.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Discipline\Schedule\BuildHydro\ComponentGrouping.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Discipline\Schedule\BuildHydro\ScheduleComponents.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Discipline\Schedule\BuildHydro\SelectCWP.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Discipline\Schedule\BuildHydro\SelectHydro.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Discipline\Schedule\BuildIWP\ComponentGrouping.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Discipline\Schedule\BuildIWP\ScheduleComponents.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Discipline\Schedule\BuildIWP\SelectCWP.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Discipline\Schedule\BuildIWP\SelectIWP.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Discipline\Schedule\BuildSchedule\ComponentGrouping.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Discipline\Schedule\BuildSchedule\ScheduleComponents.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Discipline\Schedule\BuildSchedule\SelectCWP.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Discipline\Schedule\BuildSchedule\SelectSchedule.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Discipline\Schedule\BuildSIWP\ComponentGrouping.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Discipline\Schedule\BuildSIWP\ScheduleComponents.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Discipline\Schedule\BuildSIWP\SelectSIWP.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Discipline\Schedule\ManageSchedule\ManageSchedule.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Discipline\Schedule\ManageSchedule\ManpowerLoading.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Discipline\Schedule\ManageSchedule\ProjectSchedule.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Discipline\Schedule\ManageSchedule\SelectCWP.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Discipline\Schedule\ManageSchedule\SelectSchedule.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Discipline\Schedule\ManageSchedule\SubMenu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Discipline\TimeProgress\TimeSheet.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Discipline\TurnOver\MCCertificate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Discipline\TurnOver\TurnoverSystem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Discipline\Viewer\DrawingGridViewer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Discipline\Viewer\IWPGridViewer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Lib\Common\ExtendStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Lib\UI\CSUDetail.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Lib\UI\CSUOption.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Lib\UI\HydroDetail.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Lib\UI\HydroOption.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Lib\UI\MtoTestDrawing.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lib\UI\OZReportForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lib\UI\SelectTimeSheet.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Lib\UI\SIWPDetail.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Lib\UI\IWPViewItem.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Lib\UI\DrawingViewItem.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Lib\UI\DrawingGrouping.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Lib\UI\DrawingInfo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Lib\UI\DrawingSorting.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Lib\UI\IWPDetail.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Lib\UI\IWPOption.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Lib\UI\IWPScheduleDetail.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lib\UI\ScheduleDetail_BAK.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Lib\UI\DefaultViewItem.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Lib\UI\FlipViewItem.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Lib\UI\ScheduleDetail.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lib\UI\SIWPOption.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lib\UI\AssembleButtonBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Lib\UI\TimeSheetTotal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lib\UI\Turnoverappbar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lib\UI\TurnoverbinderOption.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lib\UI\TurnoverEditor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Login.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainMenu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="res\OZXElementStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '11.0' ">
+    <VisualStudioVersion>11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ItemGroup>
+    <ProjectReference Include="..\..\element-reveal-datalibrary\Element.Reveal.DataLibrary.csproj">
+      <Project>{28800864-79a5-4151-bf2c-320d7e3e2190}</Project>
+      <Name>Element.Reveal.DataLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Element.Reveal.W8App.Common\WinAppLibrary.csproj">
+      <Project>{e1b9c5db-6161-47dc-8f6f-f159cdcb4c30}</Project>
+      <Name>WinAppLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DlhSoft.Licenses\DlhSoft.ProjectData.GanttChart.WinRT.Controls.GanttChartView.lic" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DlhSoft.Licenses\DlhSoft.ProjectData.GanttChart.WinRT.Controls.ScheduleChartView.lic" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DlhSoft.Licenses\DlhSoft.ProjectData.GanttChart.WinRT.Controls.GanttChartView.lic" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DlhSoft.Licenses\DlhSoft.ProjectData.GanttChart.WinRT.Controls.ScheduleChartView.lic" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DlhSoft.Licenses\DlhSoft.ProjectData.GanttChart.WinRT.Controls.GanttChartView.lic" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DlhSoft.Licenses\DlhSoft.ProjectData.GanttChart.WinRT.Controls.ScheduleChartView.lic" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="C1.Xaml, Version=8.0.20132.342, Culture=neutral, PublicKeyToken=2aa4ec5576d6c3ce, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Win8_Apps_ReferenceDLL\C1.Xaml.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Xaml.DateTimeEditors, Version=8.0.20132.342, Culture=neutral, PublicKeyToken=2aa4ec5576d6c3ce, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Win8_Apps_ReferenceDLL\C1.Xaml.DateTimeEditors.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Xaml.PdfViewer, Version=8.0.20132.342, Culture=neutral, PublicKeyToken=2aa4ec5576d6c3ce, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Win8_Apps_ReferenceDLL\C1.Xaml.PdfViewer.dll</HintPath>
+    </Reference>
+    <Reference Include="DlhSoft.ProjectData.GanttChart.WinRT.Controls">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\DlhSoft\Gantt Chart Modern Library 5.0.16\DlhSoft.ProjectData.GanttChart.WinRT.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="oz">
+      <HintPath>..\..\..\Win8_Apps_ReferenceDLL\ozrv\x86\oz.winmd</HintPath>
+    </Reference>
+    <Reference Include="OZWRTManagedRuntime">
+      <HintPath>..\..\..\Win8_Apps_ReferenceDLL\ozrv\x86\OZWRTManagedRuntime.winmd</HintPath>
+    </Reference>
+    <Reference Include="SharpDX">
+      <HintPath>\\ELEMENT-FILE\Software\SharedData\Software Development\Reference\Win8 Apps\SharpDX.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.DXGI">
+      <HintPath>\\ELEMENT-FILE\Software\SharedData\Software Development\Reference\Win8 Apps\SharpDX.DXGI.dll</HintPath>
+    </Reference>
+    <Reference Include="WinRTXamlToolkit">
+      <HintPath>\\ELEMENT-FILE\Software\SharedData\Software Development\Reference\Win8 Apps\WinRTXamlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="WinRTXamlToolkit.Composition">
+      <HintPath>\\ELEMENT-FILE\Software\SharedData\Software Development\Reference\Win8 Apps\WinRTXamlToolkit.Composition.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <SDKReference Include="Microsoft.VCLibs, Version=11.0">
+      <Name>Microsoft Visual C++ Runtime Package</Name>
+    </SDKReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+</Project>

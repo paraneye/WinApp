@@ -1,0 +1,106 @@
+﻿<control:LayoutAwarePage
+    x:Class="Element.Reveal.Crew.Discipline.Progress.SubmitTimeProgress"
+    DataContext="{Binding RelativeSource={RelativeSource Self}}"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Element.Reveal.Crew.Discipline.Progress"
+    xmlns:control="using:WinAppLibrary.Controls"
+    xmlns:ui="using:Element.Reveal.Crew.Lib.UI"
+    xmlns:lib="using:Element.Reveal.Crew.Lib"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <control:LayoutAwarePage.Resources>
+        <CollectionViewSource 
+            x:Name="cvsTimesheet" 
+            Source="{Binding TimeSheetList}"
+            IsSourceGrouped="False" />
+        <CollectionViewSource 
+            x:Name="cvsTimesheetProgress" 
+            Source="{Binding TimeProgressList}"
+            IsSourceGrouped="False" />
+        <lib:TimesheetTotalConverter x:Key="TotalConverter" />
+
+        <Style x:Key="TableTitle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="22" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontFamily" Value="Segoe UI Symbol" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Stretch" />
+            <Setter Property="TextAlignment" Value="Center" />
+        </Style>
+        <Style x:Key="TableDescription" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontFamily" Value="Segoe UI Symbol" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Stretch" />
+            <Setter Property="TextAlignment" Value="Center" />
+            <Setter Property="TextWrapping" Value="Wrap" />
+        </Style>
+        <Style x:Key="TableInputStyle" TargetType="TextBox">
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Stretch" />
+            <Setter Property="TextAlignment" Value="Left" />
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="Margin" Value="0,0,5,0" />
+        </Style>
+    </control:LayoutAwarePage.Resources>
+    
+    <Page.BottomAppBar>
+        <AppBar HorizontalAlignment="Stretch" Height="100">
+            <Grid HorizontalAlignment="Right" VerticalAlignment="Stretch" Margin="10">
+                <Button x:Name="btnSubmit" AutomationProperties.AutomationId="Submit" AutomationProperties.Name="Submit" HorizontalAlignment="Right"
+                            Style="{StaticResource RevealAppButtonStyle}" Content="&#xE10B;" Tag="Submit" Click="TimeSheetTotal_OperationClick" Margin="0,0,100,0" />
+
+                <Button x:Name="btnCancel" AutomationProperties.AutomationId="Cancle" AutomationProperties.Name="Cancel" HorizontalAlignment="Right"
+                            Style="{StaticResource RevealAppButtonStyle}" Content="&#xE10A;" Tag="Cancel" Click="TimeSheetTotal_OperationClick" />
+            </Grid>
+        </AppBar>
+    </Page.BottomAppBar>
+    
+    <Grid x:Name="LayoutRoot" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" >
+        <Grid.Background>
+            <ImageBrush ImageSource="/Assets/progress_bg_select.png" Stretch="UniformToFill" />
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="110" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!--Total TimeSheet ========================================================================================================================================================= -->
+        <ui:TimeSheetTotal x:Name="TimeSheetTotal" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Stretch"
+                           Width="950" OperationClick="TimeSheetTotal_OperationClick" />
+
+        <!--Modifying TimeSheet ========================================================================================================================================================= -->
+        <GridView x:Name="gvInputTimeProgress"
+                  AutomationProperties.AutomationId="InputListView"
+                  AutomationProperties.Name="Grouped TimeandProgress"
+                  HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                  VerticalContentAlignment="Stretch" Grid.Row="1"
+                  Visibility="Collapsed"
+                  SelectionMode="Single"
+                  ScrollViewer.HorizontalScrollMode="Enabled"
+                  ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                  ScrollViewer.VerticalScrollMode="Disabled"
+                  ScrollViewer.VerticalScrollBarVisibility="Hidden"
+                  ItemsSource="{Binding Source={StaticResource cvsTimesheetProgress}}"
+                  ItemContainerStyle="{StaticResource GridViewTimeAndProgressItemStyle}">
+            <GridView.RenderTransform>
+                <TranslateTransform x:Name="TranTransTop" />
+            </GridView.RenderTransform>
+            <GridView.ItemTemplate>
+                <DataTemplate>
+                    <ui:InputTemplate HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                                    Width="{Binding ElementName=gvInputTimeProgress, Path=ActualWidth}" Height="{Binding ElementName=gvInputTimeProgress, Path=ActualHeight}"
+                                                 OperationClicked="InputTemplate_OperationClicked" DeleteItemClicked="InputTemplate_DeleteItemClicked" Margin="0,0,30,0" />
+                </DataTemplate>
+            </GridView.ItemTemplate>
+            <GridView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <VirtualizingStackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Orientation="Horizontal" />
+                </ItemsPanelTemplate>
+            </GridView.ItemsPanel>
+        </GridView>
+    </Grid>
+</control:LayoutAwarePage>

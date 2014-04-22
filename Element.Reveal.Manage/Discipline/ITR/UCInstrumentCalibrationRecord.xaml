@@ -1,0 +1,479 @@
+﻿<UserControl
+    x:Class="Element.Reveal.Manage.Discipline.ITR.UCInstrumentCalibrationRecord"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Element.Reveal.Manage.Discipline.ITR"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    xmlns:control="using:WinAppLibrary.Controls"
+    xmlns:appui="using:WinAppLibrary.UI"
+    xmlns:c1="using:C1.Xaml.DateTimeEditors"
+    xmlns:Xaml="using:C1.Xaml"
+    d:DesignHeight="600"
+    d:DesignWidth="3500">    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="46"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="500"></ColumnDefinition>
+            <ColumnDefinition Width="20"></ColumnDefinition>
+            <ColumnDefinition Width="400"></ColumnDefinition>
+            <ColumnDefinition Width="20"></ColumnDefinition>
+            <ColumnDefinition Width="400"></ColumnDefinition>
+            <ColumnDefinition Width="80"></ColumnDefinition>
+            <ColumnDefinition Width="400"></ColumnDefinition>
+            <ColumnDefinition Width="80"></ColumnDefinition>
+            <ColumnDefinition Width="400"></ColumnDefinition>
+            <ColumnDefinition Width="20"></ColumnDefinition>
+            <ColumnDefinition Width="400"></ColumnDefinition>
+            <ColumnDefinition Width="20"></ColumnDefinition>
+            <ColumnDefinition Width="400"></ColumnDefinition>
+            <ColumnDefinition Width="20"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Row="0" Grid.Column="0">
+            <StackPanel VerticalAlignment="Top">
+                <TextBlock TextWrapping="Wrap" FontSize="26"  Text="Project Information" Foreground="#fff" FontFamily="Segoe UI light" Margin="5"/>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="1" Grid.Column="0">
+            <Grid.Background>
+                <SolidColorBrush Color="Black" Opacity="0.5" />
+            </Grid.Background>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="170"></ColumnDefinition>
+                <ColumnDefinition Width="150"></ColumnDefinition>
+                <ColumnDefinition Width="80"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="41"></RowDefinition>
+                <RowDefinition Height="41"></RowDefinition>
+                <RowDefinition Height="41"></RowDefinition>
+                <RowDefinition Height="41"></RowDefinition>
+                <RowDefinition Height="41"></RowDefinition>
+                <RowDefinition Height="41"></RowDefinition>
+                <RowDefinition Height="41"></RowDefinition>
+                <RowDefinition Height="41"></RowDefinition>
+                <RowDefinition Height="41"></RowDefinition>
+                <RowDefinition Height="41"></RowDefinition>
+                <RowDefinition Height="41"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" Grid.Column="0" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Text="PROJECT NAME" Margin="5"/>
+            <TextBlock Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" x:Name="txtPna" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Margin="5"/>
+            <TextBlock Grid.Row="1" Grid.Column="0" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Text="PROJECT NO." Margin="5"/>
+            <TextBlock Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" x:Name="txtPno" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Margin="5"/>
+            <TextBlock Grid.Row="2" Grid.Column="0" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Text="CWP / EWP NO." Margin="5"/>
+            <TextBlock x:Name="txtCen" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Margin="5"/>
+            <TextBlock Grid.Row="3" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Center" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" FontFamily="Segoe UI Regular" Text="CONSTRACTOR JOB NO." Margin="5"/>
+            <TextBlock x:Name="txtCjn" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" FontFamily="Segoe UI Regular" Margin="5"/>
+            <TextBlock Grid.Row="4" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Center" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" FontFamily="Segoe UI Regular" Text="INSTRUMENT TAG NO." Margin="5"/>
+            <TextBlock x:Name="txtItn" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="3" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Margin="5"/>
+            <TextBlock Grid.Row="5" Grid.Column="0" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Text="CALIBRATED BY" Margin="5"/>
+            <TextBox x:Name="txtCb" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="3" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Margin="5"/>
+            <TextBlock Grid.Row="6" Grid.Column="0" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Text="CALIBRATION DATE" Margin="5"/>
+            <c1:C1DatePicker x:Name="txtCalibrationDt" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="3" HorizontalAlignment="Stretch"  VerticalAlignment="Center"  Xaml:C1NagScreen.Nag="True" />
+        </Grid>
+
+        <Grid Grid.Row="1" Grid.Column="2" Height="550" VerticalAlignment="Top">
+            <Grid.Background>
+                <SolidColorBrush Color="Black" Opacity="0.5" />
+            </Grid.Background>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"></RowDefinition>
+                <RowDefinition Height="150"></RowDefinition>
+                <RowDefinition Height="30"></RowDefinition>
+                <RowDefinition Height="150"></RowDefinition>
+                <RowDefinition Height="30"></RowDefinition>
+                <RowDefinition Height="150"></RowDefinition>
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="0" Background="#000" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                <TextBlock FontSize="15" Foreground="#92d050" FontFamily="Segoe UI Regular" Text="Data Sheet" HorizontalAlignment="Center" Margin="0, 5, 0, 0"/>
+            </StackPanel>
+            <ListView Grid.Row="1" x:Name="lvDrawingDSheet" IsEnabled="False">
+                <ListView.Header>
+                    <Grid HorizontalAlignment="Stretch">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="120" />
+                            <ColumnDefinition Width="200" />
+                            <ColumnDefinition Width="80" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Margin="5" FontSize="15" Foreground="#7b91a2" FontFamily="Segoe UI Regular" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TextAlignment="Center" Text="Drawing Type"/>
+                        <TextBlock Grid.Column="1" Margin="5" FontSize="15" Foreground="#7b91a2" FontFamily="Segoe UI Regular" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TextAlignment="Center" Text="Drawing Name"/>
+                        <TextBlock Grid.Column="2" Margin="5" FontSize="15" Foreground="#7b91a2" FontFamily="Segoe UI Regular" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TextAlignment="Center" Text="Rev"/>
+                    </Grid>
+                </ListView.Header>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Height="20" >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="120" />
+                                <ColumnDefinition Width="160" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock x:Name="DrawingType" Grid.Column="0" Text="{Binding DrawingType}" TextAlignment="Center" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
+                            <TextBlock x:Name="DrawingName" Grid.Column="1" Text="{Binding DrawingName}" TextAlignment="Center" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+                            <TextBlock x:Name="Rev" Grid.Column="2" Text="{Binding Rev}" TextAlignment="Center" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <StackPanel Grid.Row="2" Background="#000" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                <TextBlock FontSize="15" Foreground="#92d050" FontFamily="Segoe UI Regular" Text="Loop DRWG" HorizontalAlignment="Center" Margin="0, 5, 0, 0"/>
+            </StackPanel>
+            <ListView Grid.Row="3" x:Name="lvDrawingLoop" IsEnabled="False">
+                <ListView.Header>
+                    <Grid HorizontalAlignment="Stretch">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="120" />
+                            <ColumnDefinition Width="200" />
+                            <ColumnDefinition Width="80" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Margin="5" FontSize="15" Foreground="#7b91a2" FontFamily="Segoe UI Regular" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TextAlignment="Center" Text="Drawing Type"/>
+                        <TextBlock Grid.Column="1" Margin="5" FontSize="15" Foreground="#7b91a2" FontFamily="Segoe UI Regular" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TextAlignment="Center" Text="Drawing Name"/>
+                        <TextBlock Grid.Column="2" Margin="5" FontSize="15" Foreground="#7b91a2" FontFamily="Segoe UI Regular" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TextAlignment="Center" Text="Rev"/>
+                    </Grid>
+                </ListView.Header>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Height="20" >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="120" />
+                                <ColumnDefinition Width="160" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock x:Name="DrawingType" Grid.Column="0" Text="{Binding DrawingType}" TextAlignment="Center" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
+                            <TextBlock x:Name="DrawingName" Grid.Column="1" Text="{Binding DrawingName}" TextAlignment="Center" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+                            <TextBlock x:Name="Rev" Grid.Column="2" Text="{Binding Rev}" TextAlignment="Center" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <StackPanel Grid.Row="4" Background="#000" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                <TextBlock FontSize="15" Foreground="#92d050" FontFamily="Segoe UI Regular" Text="Location DRWG" HorizontalAlignment="Center" Margin="0, 5, 0, 0"/>
+            </StackPanel>
+            <ListView Grid.Row="5" x:Name="lvDrawingLoc" IsEnabled="False">
+                <ListView.Header>
+                    <Grid HorizontalAlignment="Stretch">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="120" />
+                            <ColumnDefinition Width="200" />
+                            <ColumnDefinition Width="80" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Margin="5" FontSize="15" Foreground="#7b91a2" FontFamily="Segoe UI Regular" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TextAlignment="Center" Text="Drawing Type"/>
+                        <TextBlock Grid.Column="1" Margin="5" FontSize="15" Foreground="#7b91a2" FontFamily="Segoe UI Regular" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TextAlignment="Center" Text="Drawing Name"/>
+                        <TextBlock Grid.Column="2" Margin="5" FontSize="15" Foreground="#7b91a2" FontFamily="Segoe UI Regular" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TextAlignment="Center" Text="Rev"/>
+                    </Grid>
+                </ListView.Header>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Height="20" >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="120" />
+                                <ColumnDefinition Width="160" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock x:Name="DrawingType" Grid.Column="0" Text="{Binding DrawingType}" TextAlignment="Center" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
+                            <TextBlock x:Name="DrawingName" Grid.Column="1" Text="{Binding DrawingName}" TextAlignment="Center" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+                            <TextBlock x:Name="Rev" Grid.Column="2" Text="{Binding Rev}" TextAlignment="Center" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+
+        <Grid Grid.Row="1" Grid.Column="4" Height="550" VerticalAlignment="Top">
+            <Grid.Background>
+                <SolidColorBrush Color="Black" Opacity="0.5" />
+            </Grid.Background>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="41"/>
+                <RowDefinition Height="41"/>
+                <RowDefinition Height="41"/>
+                <RowDefinition Height="34"/>
+                <RowDefinition Height="41"/>
+                <RowDefinition Height="41"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="170"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Grid.Row="0" Margin="5" VerticalAlignment="Center" FontSize="15" Foreground="#7b91a2" FontFamily="Segoe UI Regular" Text="IWP No"/>
+            <TextBlock x:Name="txtFIWPName" Margin="5" Grid.Column="1" Grid.Row="0" FontSize="15" Foreground="#fff" FontFamily="Segoe UI Regular"/>
+            <TextBlock Grid.Column="0" Grid.Row="1" Margin="5" VerticalAlignment="Center" FontSize="15" Foreground="#7b91a2" FontFamily="Segoe UI Regular" Text="System No"/>
+            <TextBlock x:Name="txtSystemNumber" Margin="5" Grid.Column="1" Grid.Row="1" FontSize="15" Foreground="#fff" FontFamily="Segoe UI Regular"/>
+            <TextBlock Grid.Column="0" Grid.Row="2" Margin="5" VerticalAlignment="Center" FontSize="15" Foreground="#7b91a2" FontFamily="Segoe UI Regular" Text="System Name"/>
+            <TextBlock x:Name="txtSystemName" Margin="5" Grid.Column="1" Grid.Row="2" FontSize="15" Foreground="#fff" FontFamily="Segoe UI Regular"/>
+        </Grid>
+
+        <StackPanel VerticalAlignment="Top" Grid.Row="0" Grid.Column="6">
+            <TextBlock TextWrapping="Wrap" FontSize="26"  Text="Name Plate Data" Foreground="#fff" FontFamily="Segoe UI light" Margin="5"/>
+        </StackPanel>
+        <Grid Grid.Row="1" Grid.Column="6">
+            <Grid.Background>
+                <SolidColorBrush Color="Black" Opacity="0.5" />
+            </Grid.Background>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="170"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="41"></RowDefinition>
+                <RowDefinition Height="41"></RowDefinition>
+                <RowDefinition Height="41"></RowDefinition>
+                <RowDefinition Height="41"></RowDefinition>
+                <RowDefinition Height="41"></RowDefinition>
+                <RowDefinition Height="41"></RowDefinition>
+                <RowDefinition Height="41"></RowDefinition>
+                <RowDefinition Height="41"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" Grid.Column="0" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Text="MANUFACTURER :" Margin="5"/>
+            <TextBox x:Name="txtMa" Grid.Row="0" Grid.Column="1" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Margin="5"/>
+            <TextBlock Grid.Row="1" Grid.Column="0" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Text="MODEL :" Margin="5"/>
+            <TextBox x:Name="txtMo" Grid.Row="1" Grid.Column="1" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Margin="5"/>
+            <TextBlock Grid.Row="2" Grid.Column="0" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Text="INSTRUMENT TYPE :" Margin="5"/>
+            <TextBox x:Name="txtIt" Grid.Row="2" Grid.Column="1" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Margin="5"/>
+            <TextBlock Grid.Row="3" Grid.Column="0" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Text="FAIL POSITION :" Margin="5"/>
+            <TextBox x:Name="txtFp" Grid.Row="3" Grid.Column="1" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Margin="5"/>
+            <TextBlock Grid.Row="4" Grid.Column="0" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Text="SERIAL NO. :" Margin="5"/>
+            <TextBox x:Name="txtSNo" Grid.Row="4" Grid.Column="1" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Margin="5"/>
+            <TextBlock Grid.Row="5" Grid.Column="0" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Text="ANALOG / DIGITAL :" Margin="5"/>
+            <TextBox x:Name="txtAd" Grid.Row="5" Grid.Column="1" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Margin="5"/>
+            <TextBlock Grid.Row="6" Grid.Column="0" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Text="RANGE :" Margin="5"/>
+            <TextBox x:Name="txtRa" Grid.Row="6" Grid.Column="1" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Margin="5"/>
+            <TextBlock Grid.Row="7" Grid.Column="0" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Text="SET POINT :" Margin="5"/>
+            <TextBox x:Name="txtSp" Grid.Row="7" Grid.Column="1" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Margin="5"/>
+        </Grid>
+        <StackPanel VerticalAlignment="Top" Grid.Row="0" Grid.Column="8">
+            <TextBlock TextWrapping="Wrap" FontSize="26"  Text="Calibration Check" Foreground="#fff" FontFamily="Segoe UI light" Margin="5"/>
+        </StackPanel>
+        <Grid Grid.Row="1" Grid.Column="8">
+            <Grid.Background>
+                <SolidColorBrush Color="Black" Opacity="0.5" />
+            </Grid.Background>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="170"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="41"></RowDefinition>
+                <RowDefinition Height="41"></RowDefinition>
+                <RowDefinition Height="41"></RowDefinition>
+                <RowDefinition Height="41"></RowDefinition>
+                <RowDefinition Height="41"></RowDefinition>
+                <RowDefinition Height="41"></RowDefinition>
+                <RowDefinition Height="41"></RowDefinition>
+                <RowDefinition Height="41"></RowDefinition>
+                <RowDefinition Height="41"></RowDefinition>
+                <RowDefinition Height="41"></RowDefinition>
+                <RowDefinition Height="41"></RowDefinition>
+                <RowDefinition Height="41"></RowDefinition>
+                <RowDefinition Height="41"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <StackPanel Background="#000" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+                <TextBlock FontSize="15" Foreground="#92d050" FontFamily="Segoe UI Regular" Margin="5" Text="TEST INFO" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </StackPanel>
+            <TextBlock Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Text="CALIBRATION EQUIPMENT" Margin="5"/>
+            <TextBlock Grid.Row="2" Grid.Column="0" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Text="EQUIP TYPE" Margin="5"/>
+            <TextBox Grid.Row="2" Grid.Column="1" x:Name="txtCEEt" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Margin="5"/>
+            <TextBlock Grid.Row="3" Grid.Column="0" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Text="SERIAL NO." Margin="5"/>
+            <TextBox Grid.Row="3" Grid.Column="1" x:Name="txtCESno" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Margin="5"/>
+            <TextBlock Grid.Row="4" Grid.Column="0" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Text="Calibration Due Date" Margin="5"/>
+            <c1:C1DatePicker Grid.Row="4" Grid.Column="1" x:Name="txtCECalibrationDueDt" HorizontalAlignment="Stretch"  VerticalAlignment="Center"  Xaml:C1NagScreen.Nag="True" />
+            <TextBlock Grid.Row="5" Grid.Column="0" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Text="By Whom" Margin="5"/>
+            <TextBox Grid.Row="5" Grid.Column="1" x:Name="txtCEBw" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Margin="5"/>
+            <TextBlock Grid.Row="6" Grid.Column="0" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Text="Date" Margin="5"/>
+            <c1:C1DatePicker Grid.Row="6" Grid.Column="1" x:Name="txtCEDt" HorizontalAlignment="Stretch"  VerticalAlignment="Center"  Xaml:C1NagScreen.Nag="True" />
+            <TextBlock Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Text="TEST EQUIPMENT" Margin="5"/>
+            <TextBlock Grid.Row="8" Grid.Column="0" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Text="EQUIP TYPE" Margin="5"/>
+            <TextBox Grid.Row="8" Grid.Column="1" x:Name="txtTEEt" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Margin="5"/>
+            <TextBlock Grid.Row="9" Grid.Column="0" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Text="SERIAL NO." Margin="5"/>
+            <TextBox Grid.Row="9" Grid.Column="1" x:Name="txtTESno" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Margin="5"/>
+            <TextBlock Grid.Row="10" Grid.Column="0" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Text="Calibration Due Date" Margin="5"/>
+            <c1:C1DatePicker Grid.Row="10" Grid.Column="1" x:Name="txtTECalibrationDueDt" HorizontalAlignment="Stretch"  VerticalAlignment="Center"  Xaml:C1NagScreen.Nag="True" />
+            <TextBlock Grid.Row="11" Grid.Column="0" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Text="By Whom" Margin="5"/>
+            <TextBox Grid.Row="11" Grid.Column="1" x:Name="txtTEBw" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Margin="5"/>
+            <TextBlock Grid.Row="12" Grid.Column="0" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Text="Date" Margin="5"/>
+            <c1:C1DatePicker Grid.Row="12" Grid.Column="1" x:Name="txtTEDt" HorizontalAlignment="Stretch"  VerticalAlignment="Center"  Xaml:C1NagScreen.Nag="True" />
+        </Grid>
+        <Grid Grid.Row="1" Grid.Column="10">
+            <Grid.Background>
+                <SolidColorBrush Color="Black" Opacity="0.5" />
+            </Grid.Background>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="80"></ColumnDefinition>
+                <ColumnDefinition Width="80"></ColumnDefinition>
+                <ColumnDefinition Width="80"></ColumnDefinition>
+                <ColumnDefinition Width="80"></ColumnDefinition>
+                <ColumnDefinition Width="80"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="61"></RowDefinition>
+                <RowDefinition Height="41"></RowDefinition>
+                <RowDefinition Height="41"></RowDefinition>
+                <RowDefinition Height="41"></RowDefinition>
+                <RowDefinition Height="41"></RowDefinition>
+                <RowDefinition Height="41"></RowDefinition>
+                <RowDefinition Height="41"></RowDefinition>
+                <RowDefinition Height="41"></RowDefinition>
+                <RowDefinition Height="41"></RowDefinition>
+                <RowDefinition Height="41"></RowDefinition>
+                <RowDefinition Height="41"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" Background="#000" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                <TextBlock FontSize="15" Foreground="#92d050" FontFamily="Segoe UI Regular" Margin="5" Text="AS FOUND" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <TextBlock FontSize="15" Foreground="#92d050" FontFamily="Segoe UI Regular" Margin="5" Text="(BEFORE CALIBRATION CHECK)" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </StackPanel>
+            <TextBlock Grid.Row="1" Grid.Column="0" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Segoe UI Regular" Text="SCALE" Margin="5"/>
+            <TextBlock Grid.Row="1" Grid.Column="1" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Segoe UI Regular" Text="INPUT" Margin="5"/>
+            <TextBlock Grid.Row="1" Grid.Column="2" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Segoe UI Regular" Text="UNIT" Margin="5"/>
+            <TextBlock Grid.Row="1" Grid.Column="3" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Segoe UI Regular" Text="INPUT" Margin="5"/>
+            <TextBlock Grid.Row="1" Grid.Column="4" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Segoe UI Regular" Text="UNIT" Margin="5"/>
+            <TextBlock Grid.Row="2" Grid.Column="0" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Text="0%" Margin="5"/>
+            <TextBox Grid.Row="2" Grid.Column="1" x:Name="txtAFPlusZeroFInput" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Margin="5"/>
+            <TextBox Grid.Row="2" Grid.Column="2" x:Name="txtAFPlusZeroFUnit" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Margin="5"/>
+            <TextBox Grid.Row="2" Grid.Column="3" x:Name="txtAFPlusZeroLInput" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Margin="5"/>
+            <TextBox Grid.Row="2" Grid.Column="4" x:Name="txtAFPlusZeroLUnit" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Margin="5"/>
+            <TextBlock Grid.Row="3" Grid.Column="0" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Text="25%" Margin="5"/>
+            <TextBox Grid.Row="3" Grid.Column="1" x:Name="txtAFPlusAQuartFInput" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Margin="5"/>
+            <TextBox Grid.Row="3" Grid.Column="2" x:Name="txtAFPlusAQuartFUnit" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Margin="5"/>
+            <TextBox Grid.Row="3" Grid.Column="3" x:Name="txtAFPlusAQuartLInput" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Margin="5"/>
+            <TextBox Grid.Row="3" Grid.Column="4" x:Name="txtAFPlusAQuartLUnit" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Margin="5"/>
+            <TextBlock Grid.Row="4" Grid.Column="0" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Text="50%" Margin="5"/>
+            <TextBox Grid.Row="4" Grid.Column="1" x:Name="txtAFPlusHalfFInput" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Margin="5"/>
+            <TextBox Grid.Row="4" Grid.Column="2" x:Name="txtAFPlusHalfFUnit" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Margin="5"/>
+            <TextBox Grid.Row="4" Grid.Column="3" x:Name="txtAFPlusHalfLInput" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Margin="5"/>
+            <TextBox Grid.Row="4" Grid.Column="4" x:Name="txtAFPlusHalfLUnit" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Margin="5"/>
+            <TextBlock Grid.Row="5" Grid.Column="0" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Text="75%" Margin="5"/>
+            <TextBox Grid.Row="5" Grid.Column="1" x:Name="txtAFPlusQuartsFInput" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Margin="5"/>
+            <TextBox Grid.Row="5" Grid.Column="2" x:Name="txtAFPlusQuartsFUnit" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Margin="5"/>
+            <TextBox Grid.Row="5" Grid.Column="3" x:Name="txtAFPlusQuartsLInput" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Margin="5"/>
+            <TextBox Grid.Row="5" Grid.Column="4" x:Name="txtAFPlusQuartsLUnit" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Margin="5"/>
+            <TextBlock Grid.Row="6" Grid.Column="0" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Text="100%" Margin="5"/>
+            <TextBox Grid.Row="6" Grid.Column="1" x:Name="txtAFPlusFullFInput" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Margin="5"/>
+            <TextBox Grid.Row="6" Grid.Column="2" x:Name="txtAFPlusFullFUnit" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Margin="5"/>
+            <TextBox Grid.Row="6" Grid.Column="3" x:Name="txtAFPlusFullLInput" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Margin="5"/>
+            <TextBox Grid.Row="6" Grid.Column="4" x:Name="txtAFPlusFullLUnit" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Margin="5"/>
+            <TextBlock Grid.Row="7" Grid.Column="0" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Text="75%" Margin="5"/>
+            <TextBox Grid.Row="7" Grid.Column="1" x:Name="txtAFMinusQuartsFInput" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Margin="5"/>
+            <TextBox Grid.Row="7" Grid.Column="2" x:Name="txtAFMinusQuartsFUnit" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Margin="5"/>
+            <TextBox Grid.Row="7" Grid.Column="3" x:Name="txtAFMinusQuartsLInput" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Margin="5"/>
+            <TextBox Grid.Row="7" Grid.Column="4" x:Name="txtAFMinusQuartsLUnit" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Margin="5"/>
+            <TextBlock Grid.Row="8" Grid.Column="0" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Text="50%" Margin="5"/>
+            <TextBox Grid.Row="8" Grid.Column="1" x:Name="txtAFMinusHalfFInput" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Margin="5"/>
+            <TextBox Grid.Row="8" Grid.Column="2" x:Name="txtAFMinusHalfFUnit" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Margin="5"/>
+            <TextBox Grid.Row="8" Grid.Column="3" x:Name="txtAFMinusHalfLInput" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Margin="5"/>
+            <TextBox Grid.Row="8" Grid.Column="4" x:Name="txtAFMinusHalfLUnit" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Margin="5"/>
+            <TextBlock Grid.Row="9" Grid.Column="0" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Text="25%" Margin="5"/>
+            <TextBox Grid.Row="9" Grid.Column="1" x:Name="txtAFMinusAQuartFInput" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Margin="5"/>
+            <TextBox Grid.Row="9" Grid.Column="2" x:Name="txtAFMinusAQuartFUnit" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Margin="5"/>
+            <TextBox Grid.Row="9" Grid.Column="3" x:Name="txtAFMinusAQuartLInput" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Margin="5"/>
+            <TextBox Grid.Row="9" Grid.Column="4" x:Name="txtAFMinusAQuartLUnit" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Margin="5"/>
+            <TextBlock Grid.Row="10" Grid.Column="0" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Text="0%" Margin="5"/>
+            <TextBox Grid.Row="10" Grid.Column="1" x:Name="txtAFMinusZeroFInput" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Margin="5"/>
+            <TextBox Grid.Row="10" Grid.Column="2" x:Name="txtAFMinusZeroFUnit" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Margin="5"/>
+            <TextBox Grid.Row="10" Grid.Column="3" x:Name="txtAFMinusZeroLInput" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Margin="5"/>
+            <TextBox Grid.Row="10" Grid.Column="4" x:Name="txtAFMinusZeroLUnit" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Margin="5"/>
+        </Grid>
+        <Grid Grid.Row="1" Grid.Column="12">
+            <Grid.Background>
+                <SolidColorBrush Color="Black" Opacity="0.5" />
+            </Grid.Background>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="80"></ColumnDefinition>
+                <ColumnDefinition Width="80"></ColumnDefinition>
+                <ColumnDefinition Width="80"></ColumnDefinition>
+                <ColumnDefinition Width="80"></ColumnDefinition>
+                <ColumnDefinition Width="80"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="61"></RowDefinition>
+                <RowDefinition Height="41"></RowDefinition>
+                <RowDefinition Height="41"></RowDefinition>
+                <RowDefinition Height="41"></RowDefinition>
+                <RowDefinition Height="41"></RowDefinition>
+                <RowDefinition Height="41"></RowDefinition>
+                <RowDefinition Height="41"></RowDefinition>
+                <RowDefinition Height="41"></RowDefinition>
+                <RowDefinition Height="41"></RowDefinition>
+                <RowDefinition Height="41"></RowDefinition>
+                <RowDefinition Height="41"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <StackPanel Background="#000" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5">
+                <TextBlock FontSize="15" Foreground="#92d050" FontFamily="Segoe UI Regular" Margin="5" Text="AS LEFT" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <TextBlock FontSize="15" Foreground="#92d050" FontFamily="Segoe UI Regular" Margin="5" Text="(AFTER CALIBRATION CHECK)" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </StackPanel>
+            <TextBlock Grid.Row="1" Grid.Column="0" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Segoe UI Regular" Text="SCALE" Margin="5"/>
+            <TextBlock Grid.Row="1" Grid.Column="1" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Segoe UI Regular" Text="INPUT" Margin="5"/>
+            <TextBlock Grid.Row="1" Grid.Column="2" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Segoe UI Regular" Text="UNIT" Margin="5"/>
+            <TextBlock Grid.Row="1" Grid.Column="3" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Segoe UI Regular" Text="INPUT" Margin="5"/>
+            <TextBlock Grid.Row="1" Grid.Column="4" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Segoe UI Regular" Text="UNIT" Margin="5"/>
+            <TextBlock Grid.Row="2" Grid.Column="0" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Text="0%" Margin="5"/>
+            <TextBox Grid.Row="2" Grid.Column="1" x:Name="txtALPlusZeroFInput" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Margin="5"/>
+            <TextBox Grid.Row="2" Grid.Column="2" x:Name="txtALPlusZeroFUnit" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Margin="5"/>
+            <TextBox Grid.Row="2" Grid.Column="3" x:Name="txtALPlusZeroLInput" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Margin="5"/>
+            <TextBox Grid.Row="2" Grid.Column="4" x:Name="txtALPlusZeroLUnit" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Margin="5"/>
+            <TextBlock Grid.Row="3" Grid.Column="0" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Text="25%" Margin="5"/>
+            <TextBox Grid.Row="3" Grid.Column="1" x:Name="txtALPlusAQuartFInput" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Margin="5"/>
+            <TextBox Grid.Row="3" Grid.Column="2" x:Name="txtALPlusAQuartFUnit" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Margin="5"/>
+            <TextBox Grid.Row="3" Grid.Column="3" x:Name="txtALPlusAQuartLInput" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Margin="5"/>
+            <TextBox Grid.Row="3" Grid.Column="4" x:Name="txtALPlusAQuartLUnit" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Margin="5"/>
+            <TextBlock Grid.Row="4" Grid.Column="0" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Text="50%" Margin="5"/>
+            <TextBox Grid.Row="4" Grid.Column="1" x:Name="txtALPlusHalfFInput" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Margin="5"/>
+            <TextBox Grid.Row="4" Grid.Column="2" x:Name="txtALPlusHalfFUnit" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Margin="5"/>
+            <TextBox Grid.Row="4" Grid.Column="3" x:Name="txtALPlusHalfLInput" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Margin="5"/>
+            <TextBox Grid.Row="4" Grid.Column="4" x:Name="txtALPlusHalfLUnit" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Margin="5"/>
+            <TextBlock Grid.Row="5" Grid.Column="0" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Text="75%" Margin="5"/>
+            <TextBox Grid.Row="5" Grid.Column="1" x:Name="txtALPlusQuartsFInput" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Margin="5"/>
+            <TextBox Grid.Row="5" Grid.Column="2" x:Name="txtALPlusQuartsFUnit" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Margin="5"/>
+            <TextBox Grid.Row="5" Grid.Column="3" x:Name="txtALPlusQuartsLInput" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Margin="5"/>
+            <TextBox Grid.Row="5" Grid.Column="4" x:Name="txtALPlusQuartsLUnit" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Margin="5"/>
+            <TextBlock Grid.Row="6" Grid.Column="0" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Text="100%" Margin="5"/>
+            <TextBox Grid.Row="6" Grid.Column="1" x:Name="txtALPlusFullFInput" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Margin="5"/>
+            <TextBox Grid.Row="6" Grid.Column="2" x:Name="txtALPlusFullFUnit" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Margin="5"/>
+            <TextBox Grid.Row="6" Grid.Column="3" x:Name="txtALPlusFullLInput" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Margin="5"/>
+            <TextBox Grid.Row="6" Grid.Column="4" x:Name="txtALPlusFullLUnit" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Margin="5"/>
+            <TextBlock Grid.Row="7" Grid.Column="0" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Text="75%" Margin="5"/>
+            <TextBox Grid.Row="7" Grid.Column="1" x:Name="txtALMinusQuartsFInput" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Margin="5"/>
+            <TextBox Grid.Row="7" Grid.Column="2" x:Name="txtALMinusQuartsFUnit" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Margin="5"/>
+            <TextBox Grid.Row="7" Grid.Column="3" x:Name="txtALMinusQuartsLInput" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Margin="5"/>
+            <TextBox Grid.Row="7" Grid.Column="4" x:Name="txtALMinusQuartsLUnit" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Margin="5"/>
+            <TextBlock Grid.Row="8" Grid.Column="0" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Text="50%" Margin="5"/>
+            <TextBox Grid.Row="8" Grid.Column="1" x:Name="txtALMinusHalfFInput" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Margin="5"/>
+            <TextBox Grid.Row="8" Grid.Column="2" x:Name="txtALMinusHalfFUnit" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Margin="5"/>
+            <TextBox Grid.Row="8" Grid.Column="3" x:Name="txtALMinusHalfLInput" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Margin="5"/>
+            <TextBox Grid.Row="8" Grid.Column="4" x:Name="txtALMinusHalfLUnit" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Margin="5"/>
+            <TextBlock Grid.Row="9" Grid.Column="0" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Text="25%" Margin="5"/>
+            <TextBox Grid.Row="9" Grid.Column="1" x:Name="txtALMinusAQuartFInput" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Margin="5"/>
+            <TextBox Grid.Row="9" Grid.Column="2" x:Name="txtALMinusAQuartFUnit" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Margin="5"/>
+            <TextBox Grid.Row="9" Grid.Column="3" x:Name="txtALMinusAQuartLInput" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Margin="5"/>
+            <TextBox Grid.Row="9" Grid.Column="4" x:Name="txtALMinusAQuartLUnit" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Margin="5"/>
+            <TextBlock Grid.Row="10" Grid.Column="0" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Text="0%" Margin="5"/>
+            <TextBox Grid.Row="10" Grid.Column="1" x:Name="txtALMinusZeroFInput" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Margin="5"/>
+            <TextBox Grid.Row="10" Grid.Column="2" x:Name="txtALMinusZeroFUnit" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Margin="5"/>
+            <TextBox Grid.Row="10" Grid.Column="3" x:Name="txtALMinusZeroLInput" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Margin="5"/>
+            <TextBox Grid.Row="10" Grid.Column="4" x:Name="txtALMinusZeroLUnit" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Margin="5"/>
+        </Grid>
+        <Grid Grid.Row="1" Grid.Column="14">
+            <Grid.Background>
+                <SolidColorBrush Color="Black" Opacity="0.5" />
+            </Grid.Background>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="41"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" Grid.Column="0" x:Name="txtCommentTitle" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Margin="5"/>
+            <TextBlock Grid.Row="1" Grid.Column="0" TextWrapping="Wrap" FontSize="15" Foreground="#7b91a2" VerticalAlignment="Center" FontFamily="Segoe UI Regular" Text="Comments" Margin="5"/>
+            <TextBox Grid.Row="2" Grid.Column="0" Margin="5" x:Name="txtVIfRaC" TextWrapping="Wrap" FontSize="15" FontFamily="Segoe UI Regular" Height="300" VerticalAlignment="Top" HorizontalAlignment="Stretch"></TextBox>
+        </Grid>
+    </Grid>
+</UserControl>

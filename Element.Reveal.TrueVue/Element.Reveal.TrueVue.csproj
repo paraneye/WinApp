@@ -1,0 +1,1757 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5052E264-1239-46C9-8A2E-28AB27D0DAFB}</ProjectGuid>
+    <OutputType>AppContainerExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Element.Reveal.TrueVue</RootNamespace>
+    <AssemblyName>Element.Reveal.TrueVue</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{BC8A1FFA-BEE3-4634-8014-F334798102B3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <PackageCertificateKeyFile>Element.Reveal.W8App_TemporaryKey.pfx</PackageCertificateKeyFile>
+    <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <OutputPath>bin\ARM\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Discipline\Viewer\DrawingGridViewer.xaml.cs">
+      <DependentUpon>DrawingGridViewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Discipline\Viewer\DrawingViewer.xaml.cs">
+      <DependentUpon>DrawingViewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GroupedItemsPage.xaml.cs">
+      <DependentUpon>GroupedItemsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ItemDetailPage.xaml.cs">
+      <DependentUpon>ItemDetailPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\Constant.cs" />
+    <Compile Include="Lib\Converter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Lib\DrawingDataSource.cs" />
+    <Compile Include="Lib\ProjectModuleSource.cs" />
+    <Compile Include="Lib\ServiceModel\CommonModel.cs" />
+    <Compile Include="Lib\ServiceModel\ProjectModel.cs" />
+    <Compile Include="Lib\ServiceModel\UserModel.cs" />
+    <Compile Include="Lib\UI\DefaultViewItem.xaml.cs">
+      <DependentUpon>DefaultViewItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\UI\DrawingInfo.xaml.cs">
+      <DependentUpon>DrawingInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\UI\DrawingGrouping.xaml.cs">
+      <DependentUpon>DrawingGrouping.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\UI\DrawingSorting.xaml.cs">
+      <DependentUpon>DrawingSorting.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\UI\FlipViewItem.xaml.cs">
+      <DependentUpon>FlipViewItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\UI\ViewerItem.xaml.cs">
+      <DependentUpon>ViewerItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\RevealCommonSvc\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\RevealProjectSvc\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\RevealUserSvc\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+    <None Include="Element.Reveal.W8App_TemporaryKey.pfx" />
+    <None Include="Properties\ServiceReferences.Designer.ClientConfig" />
+    <None Include="Service References\RevealCommonSvc\CommonService.wsdl" />
+    <None Include="Service References\RevealCommonSvc\CommonService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RevealCommonSvc\CommonService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RevealCommonSvc\CommonService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RevealCommonSvc\CommonService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RevealCommonSvc\CommonService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetAllEqupmentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetAllFieldEqupmentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetAllLookupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetAllPersonnelByCWPProject_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetAllPersonnelByProjectIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetAllPersonnelUnassignedByProjectIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetAllUserlookupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetCableType1_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetCableType2_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetChildDepartStructureByDepartStructureResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetChildDepartStructure_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetCompanyAllResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetCompanyByCompanyIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetCompanyByCompanyTypeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetCompanyByIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetCompanyByNameResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetCompanyByTypeLUIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetCompany_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetComponentIsoLineNo_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetComponentProgressTimesheetUncompleted_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetCostCodeByProject_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetCrewAndForemanByFiwpWorkDate_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetCrewAndForemanByFiwp_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetCWPAssignedFIWPByProject_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetCWPByProject_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetCWPByProject_Combo_MobileResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetCWPByProject_PanelBarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetDepartmentAllResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetDepartmentApprovalGroupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetDepartmentByDepartmentTextResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetDepartmentByDepartTypeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetDepartmentByIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetDepartstructureByDepartmentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetDepartstructureByDepartmentTextResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetDepartstructureByIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetDepartstructureByLoginAccountResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetDepartstructureByPersonnelDepartStructureResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetDepartStructureByPersonnelIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetDepartstructureByProjectModuleForMenonsiteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetDepartstructureByProjectResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetDFLByByProjectID_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetDocumentByFIWP_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetDrawingAll_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetDrawingByCWPProjectschedule_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetDrawingByCWP_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetDrawingByFIWP_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetDrawingByProjectSchedule_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetDrawingTagByProjectID_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetEmpclassAllResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetEmpclassByIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetEngTagNumberByFIWPQaqc_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetEquipmentByTypeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetEquipType_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetEqupmentByIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetFieldequipmentByTypeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetFieldEqupmentByIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetFIWPByCwp_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetFIWPByFIWP_ExtSchResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetFIWPByMaterialCategoryType_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetFIWPByPackageType_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetFIWPByPersonnelDepartmentFiwpqaqc_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetFIWPByPersonnelDepartment_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetFIWPByProjectSchedulePackageType_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetFIWPByProjectSchedule_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetFIWPByProjectSchedule_ExtSchResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetFIWPByProjectSchedule_ExtSch_MobileHichartsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetFIWPByProjectSchedule_ExtSch_MobileResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetFIWPByProject_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetFIWPCrewByFIWP_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetFiwpManPowerByProjectSchedule_ExtSchResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetFixtureType_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetForemanByFIWP_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetForemanByGeneralForeman_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetForemanByProjectID_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetForemanGeneralForemanNameByPersonnelDepartment_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetGeneralForemanByProject_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetGeneralForemanBySuperintendant_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetImportedfilenameAllResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetImportedfilenameByfilenameResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetImportedfilenameByfiletypeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetInstrCategory_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetInstrType_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetItemCode_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetKeyValueByFIWPQaqc_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetLibinsulpipemanhourForPaging_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetLibPipeMaterailGrp_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetLightingType_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetLookupByIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetLookupByLookupTypeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetLookupByLookupType_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetLookupForLibInsulPipeFactorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetLoop_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetManhourRateByLevelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetMaterialCategoryByLibInsulPipeFactorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetMaterialCategoryByModuleIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetMaterialCategoryByModule_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetMaterialProcessSystem_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetMaterialSize_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetModuleAllResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetModuleByIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetMTOSearchGroup_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetPageSettingsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetPersonnelByIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetPlant_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetProgressTimesheetByProjectID_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetProjectContractorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetProjectScheduleByCwpWithFiwp_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetProjectScheduleByCwp_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetProjectScheduleByProject_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetProjectSchedule_Cwp_ExtSchResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetProjectSchedule_fiwp_Cwp_ExtSchResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetQaqcDrawingsByComponent_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetQAQCFormByQCTemplateSystemCWPFIWP_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetRacewayClass_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetRacewayLength_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetRacewayType_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetRacewayWidth_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetReelNoByFIWPQaqc_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetReferenceDrawingByQaqcformTemplate_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetReferenceDrawingByTagNo_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetRuelOfCreditWeightByProjectAndMaterialCategoryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetRuleOfCreditAvailableResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetRuleofCreditByMaterialCategory_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetRuleOfCreditWeightByProjectResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetScaffoldByCwp_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetScaffoldRequestByCwp_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetSdByIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetSdByMaterialCategoryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetSdByModuleResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetSDByModule_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetSdForPagingMtoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetSdForPagingResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetSdmateriallistByMaterialListIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetSdmateriallistBySDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetSDType_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetSiderailDepth_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetSingleLookupByIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetSinglePersonnelByDepartStructureResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetSinglePersonnelByIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetSingleUserlookupByIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetSingleUserlookupByID_CityResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetSubmittedQaqcformByFiwpResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetSuperintendantInPrjSchedule_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetSystemByFIWP_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetSystemByProject_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetTagNoByFIWPQaqc_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetTagNumberByComponent_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetTaskCategoryByLibInsulPipeFactorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetTaskcategoryByMaterialCategoryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetTaskCategoryByModuleIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetTaskTypeByMaterialCategoryForElectricalEstManhrsLibrary_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetTimeSheetByWorkDate_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetTurnoverPackageByBinderPage_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetUOM_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetUsergroupAllResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetUserGroupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetUserlookupByIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetUserlookupByLookupTypeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetUserlookupByLookupType_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetUserlookupByType_CityResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetVendorByMaterialCategoryForElectricalEstManhrsLibrary_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetVendor_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetWorkDateByProject_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.GetWorkFlowDepartStructureByDepartmentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetAllEqupmentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetAllFieldEqupmentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetAllLookupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetAllPersonnelByCWPProject_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetAllPersonnelByProjectIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetAllPersonnelUnassignedByProjectIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetAllUserlookupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetCableType1_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetCableType2_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetChildDepartStructureByDepartStructureResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetChildDepartStructure_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetCompanyAllResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetCompanyByCompanyIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetCompanyByCompanyTypeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetCompanyByIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetCompanyByNameResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetCompanyByTypeLUIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetCompany_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetCostCodeByProject_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetCrewAndForemanByFiwpWorkDate_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetCrewAndForemanByFiwp_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetCWPAssignedFIWPByProject_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetCWPByProject_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetDepartmentAllResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetDepartmentApprovalGroupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetDepartmentByDepartmentTextResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetDepartmentByDepartTypeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetDepartmentByIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetDepartstructureByDepartmentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetDepartstructureByDepartmentTextResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetDepartstructureByIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetDepartstructureByLoginAccountResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetDepartstructureByPersonnelDepartStructureResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetDepartstructureByProjectModuleForMenonsiteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetDepartstructureByProjectResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetDFLByByProjectID_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetDocumentByFIWP_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetDrawingAll_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetDrawingByCWPProjectschedule_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetDrawingByCWP_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetDrawingByFIWP_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetDrawingByProjectSchedule_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetDrawingTagByProjectID_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetEmpclassAllResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetEngTagNumberByFIWPQaqc_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetEquipmentByTypeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetEquipType_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetEqupmentByIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetFieldequipmentByTypeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetFieldEqupmentByIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetFIWPByCwp_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetFIWPByFIWP_ExtSchResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetFIWPByMaterialCategoryType_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetFIWPByPackageType_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetFIWPByPersonnelDepartmentFiwpqaqc_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetFIWPByPersonnelDepartment_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetFIWPByProjectSchedulePackageType_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetFIWPByProjectSchedule_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetFIWPByProjectSchedule_ExtSchResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetFIWPByProject_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetFIWPCrewByFIWP_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetFiwpManPowerByProjectSchedule_ExtSchResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetFixtureType_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetForemanByFIWP_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetForemanByGeneralForeman_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetForemanByProjectID_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetForemanGeneralForemanNameByPersonnelDepartment_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetGeneralForemanByProject_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetGeneralForemanBySuperintendant_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetImportedfilenameAllResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetImportedfilenameByfilenameResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetImportedfilenameByfiletypeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetInstrCategory_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetInstrType_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetItemCode_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetKeyValueByFIWPQaqc_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetLibPipeMaterailGrp_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetLightingType_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetLookupByIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetLookupByLookupTypeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetLookupByLookupType_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetManhourRateByLevelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetMaterialCategoryByLibInsulPipeFactorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetMaterialCategoryByModuleIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetMaterialCategoryByModule_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetModuleAllResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetModuleByIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetMTOSearchGroup_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetPageSettingsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetPersonnelByIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetPlant_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetProgressTimesheetByProjectID_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetProjectContractorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetProjectScheduleByCwp_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetQaqcDrawingsByComponent_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetQAQCFormByQCTemplateSystemCWPFIWP_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetRacewayClass_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetRacewayLength_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetRacewayType_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetRacewayWidth_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetReelNoByFIWPQaqc_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetReferenceDrawingByQaqcformTemplate_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetReferenceDrawingByTagNo_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetRuelOfCreditWeightByProjectAndMaterialCategoryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetRuleOfCreditAvailableResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetRuleofCreditByMaterialCategory_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetRuleOfCreditWeightByProjectResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetScaffoldByCwp_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetScaffoldRequestByCwp_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetSdByIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetSdByMaterialCategoryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetSdByModuleResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetSDByModule_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetSdForPagingMtoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetSdForPagingResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetSdmateriallistByMaterialListIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetSdmateriallistBySDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetSDType_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetSiderailDepth_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetSingleLookupByIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetSinglePersonnelByDepartStructureResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetSinglePersonnelByIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetSingleUserlookupByIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetSingleUserlookupByID_CityResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetSuperintendantInPrjSchedule_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetSystemByFIWP_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetSystemByProject_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetTagNoByFIWPQaqc_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetTagNumberByComponent_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetTaskCategoryByLibInsulPipeFactorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetTaskcategoryByMaterialCategoryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetTaskCategoryByModuleIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetTaskTypeByMaterialCategoryForElectricalEstManhrsLibrary_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetTimeSheetByWorkDate_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetTurnoverPackageByBinderPage_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetUOM_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetUsergroupAllResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetUserGroupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetUserlookupByIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetUserlookupByLookupTypeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetUserlookupByLookupType_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetUserlookupByType_CityResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetVendorByMaterialCategoryForElectricalEstManhrsLibrary_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetVendor_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetWorkDateByProject_ComboResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.JsonGetWorkFlowDepartStructureByDepartmentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.RemoveCalendarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.SaveCompanyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.SaveDepartmentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.SaveDepartStructureForModuleResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.SaveDepartStructureResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.SaveEmpclassResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.SaveEquipmentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.SaveFieldEquipmentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.SaveLookupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.SavePageResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.SavePageSettingsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.SavePersonnelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.SaveProjectContractorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.SaveRuleOfCreditWeightResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.SaveSdAndSdmateriallistResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.SaveSdAndSdmateriallistWithPageNumberResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.SaveSdmateriallistResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.SaveSdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.SaveSDWithMaterialListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.SaveUserlookupCityResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealCommonSvc\Element.Reveal.TrueVue.RevealCommonSvc.SaveUserlookupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.AreaDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.CalendarDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.CollectionDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.ComboBoxDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.ComponentAndMaterial.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.ComponentDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.ComponentlogDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.ComponentPageTotal.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.CostcodeDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.CostcodelockedDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.CostcodestructureDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.CostcodetaleDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.CwaDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.CwpDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.DailybrassDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.DailybrasssignDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.DailytimesheetDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.DailytoolboxDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.DocumentDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.DocumentmarkupDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.DocumentnoteDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.DrawingAndMarkup.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.DrawingcwpDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.DrawingDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.DrawingPageTotal.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.DrawingreferenceDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.DrawingrevisionDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.DrawingsdrefDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.ExtSchedulerDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.FiwpcommentDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.FiwpdocordinalDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.FiwpDocument.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.FiwpDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.FiwpequipDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.FiwpmanonsiteDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.FiwpmanpowerDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.FiwpmaterialDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.FiwpqaqcDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.FiwpwfpDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.FiwpworkflowDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.LibcablemanhourDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.LibcablemanhourPageTotal.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.LibconsumableDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.LibehtmanhourDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.LibehtmanhourPageTotal.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.LibequipmanhourDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.LibequipmanhourPageTotal.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.LibgroundingmanhourDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.LibgroundingmanhourPageTotal.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.LibinstrmanhourDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.LibinstrmanhourPageTotal.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.LibinsulfactorDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.LibinsulfactorPageTotal.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.LibinsulfireproofDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.LibinsulfireproofPageTotal.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.LibinsulpaintmanhourDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.LibinsulpaintmanhourPageTotal.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.LibinsulpipefactorDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.LibinsulpipefactorPageTotal.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.LibinsulpipemanhourDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.LibinsulpipemanhourPageTotal.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.LiblightingmanhourDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.LiblightingmanhourPageTotal.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.LibpipeclassmanhourDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.LibpipeclassmanhourPageTotal.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.LibpipemanhourDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.LibpipemanhourPageTotal.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.LibpipemanhourratioDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.LibpipemanhourratioPageTotal.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.LibpipematerialgrpDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.LibpipeschmanhourDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.LibpipeschmanhourPageTotal.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.LibpipesupmanhourDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.LibpipesupmanhourPageTotal.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.LibracewaymanhourDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.LibracewaymanhourPageTotal.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.MaterialCableDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.MaterialDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.MaterialRacewayDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.ModuleDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.MTOAndDrawing.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.MTODTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.MTOPageTotal.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.PlantDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.ProgressAssignment.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.ProgressDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.ProgressruleofcreditCompletedDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.ProjectAndModule.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.ProjectcostcodeDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.ProjectDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.ProjectmoduleDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.ProjectscheduleDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.ProjectWizard.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.PunchDTOSet.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.QaqcconfigDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.QaqcformdetailDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.QaqcformDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.QaqcformtemplateDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.QuantityserveyDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.RfidrawingDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.RfiDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.rptPunchDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.rptQAQCformDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.ScaffoldAndRequest.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.ScaffoldAndRequestDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.ScaffoldDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.ScaffoldrequestDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.ScaffoldtradeDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.SigmacueDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.SystemDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.TagnumberdrawingDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.TimeallocationDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.TimesheetAndProgress.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.TimesheetDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.TimesheetTaskAndValue.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.ToolboxsignDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.WalkdownDTOSet.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\Element.Reveal.TrueVue.RevealProjectSvc.WeatherDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealProjectSvc\ProjectService.wsdl" />
+    <None Include="Service References\RevealProjectSvc\ProjectService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RevealProjectSvc\ProjectService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RevealProjectSvc\ProjectService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RevealProjectSvc\ProjectService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RevealProjectSvc\ProjectService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RevealUserSvc\Element.Reveal.TrueVue.RevealUserSvc.ComboBoxDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealUserSvc\Element.Reveal.TrueVue.RevealUserSvc.LoginaccountAndModuleUserGroup.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealUserSvc\Element.Reveal.TrueVue.RevealUserSvc.LoginaccountDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealUserSvc\Element.Reveal.TrueVue.RevealUserSvc.LoginaccountmoduleusergroupDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealUserSvc\Element.Reveal.TrueVue.RevealUserSvc.MobileLoginDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RevealUserSvc\UserService.wsdl" />
+    <None Include="Service References\RevealUserSvc\UserService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RevealUserSvc\UserService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RevealUserSvc\UserService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RevealUserSvc\UserService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RevealUserSvc\UserService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\ElementLogo Big.scale-100.png" />
+    <Content Include="Assets\ElementLogo Big.scale-140.png" />
+    <Content Include="Assets\ElementLogo Big.scale-180.png" />
+    <Content Include="Assets\vue_bg.jpg" />
+    <Content Include="Assets\dosorting.png" />
+    <Content Include="Assets\semantic_cwp.png" />
+    <Content Include="Assets\Default.JPG" />
+    <Content Include="Assets\drawing.png" />
+    <Content Include="Assets\ElementLogo 120X120.png" />
+    <Content Include="Assets\ElementLogo 150X150.png" />
+    <Content Include="Assets\ElementLogo 210X210.png" />
+    <Content Include="Assets\ElementLogo 270X270.png" />
+    <Content Include="Assets\ElementLogo Small.scale-100.png" />
+    <Content Include="Assets\ElementLogo Small.scale-140.png" />
+    <Content Include="Assets\ElementLogo Small.scale-180.png" />
+    <Content Include="Assets\ElementLogo Small.scale-50.png" />
+    <Content Include="Assets\ElementLogo Small.scale-70.png" />
+    <Content Include="Assets\ElementLogo Small.scale-80.png" />
+    <Content Include="Assets\ElementLogo Small.scale-90.png" />
+    <Content Include="Assets\ElementLogoTM.png" />
+    <Content Include="Assets\home.png" />
+    <Content Include="Assets\Logo.png" />
+    <Content Include="Assets\Module\civil.png" />
+    <Content Include="Assets\Module\electrical.png" />
+    <Content Include="Assets\Module\instrumentation.png" />
+    <Content Include="Assets\Module\insulation.png" />
+    <Content Include="Assets\Module\mags.png" />
+    <Content Include="Assets\Module\mechanical.png" />
+    <Content Include="Assets\Module\piping.png" />
+    <Content Include="Assets\Module\scaffold.png" />
+    <Content Include="Assets\Module\steel.png" />
+    <Content Include="Assets\Project\project0.png" />
+    <Content Include="Assets\Project\project1.png" />
+    <Content Include="Assets\Project\project2.png" />
+    <Content Include="Assets\Project\project3.png" />
+    <Content Include="Assets\Project\project4.png" />
+    <Content Include="Assets\Project\project5.png" />
+    <Content Include="Assets\Project\projects0.png" />
+    <Content Include="Assets\Project\projects1.png" />
+    <Content Include="Assets\Project\projects2.png" />
+    <Content Include="Assets\Project\projects3.png" />
+    <Content Include="Assets\Project\projects4.png" />
+    <Content Include="Assets\Project\projects5.png" />
+    <Content Include="Assets\report_crew.png" />
+    <Content Include="Assets\report_project.png" />
+    <Content Include="Assets\schedule_progress.png" />
+    <Content Include="Assets\search.png" />
+    <Content Include="Assets\SmallLogo.png" />
+    <Content Include="Assets\sorting.png" />
+    <Content Include="Assets\SplashScreen.png" />
+    <Content Include="Assets\squares.png" />
+    <Content Include="Assets\StoreLogo.png" />
+    <Content Include="Assets\LightGray.png" />
+    <Content Include="Assets\MediumGray.png" />
+    <Content Include="Assets\DarkGray.png" />
+    <Content Include="Assets\StoreLogo.scale-100.png" />
+    <Content Include="Assets\StoreLogo.scale-140.png" />
+    <Content Include="Assets\StoreLogo.scale-180.png" />
+    <Content Include="Assets\tile_bg.png" />
+    <Content Include="Assets\viewer_drawing.png" />
+    <Content Include="Assets\WideLogo.scale-100.png" />
+    <Content Include="Assets\WideLogo.scale-140.png" />
+    <Content Include="Assets\WideLogo.scale-180.png" />
+    <Content Include="Assets\WideLogo.scale-80.png" />
+    <None Include="Service References\RevealProjectSvc\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\RevealProjectSvc\configuration.svcinfo" />
+    <None Include="Service References\RevealProjectSvc\configuration91.svcinfo" />
+    <None Include="Service References\RevealProjectSvc\ProjectService.disco" />
+    <None Include="Service References\RevealCommonSvc\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\RevealCommonSvc\configuration.svcinfo" />
+    <None Include="Service References\RevealCommonSvc\configuration91.svcinfo" />
+    <None Include="Service References\RevealCommonSvc\CommonService.disco" />
+    <None Include="Service References\RevealUserSvc\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\RevealUserSvc\configuration.svcinfo" />
+    <None Include="Service References\RevealUserSvc\configuration91.svcinfo" />
+    <None Include="Service References\RevealUserSvc\UserService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="Discipline\Viewer\DrawingGridViewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Discipline\Viewer\DrawingViewer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GroupedItemsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ItemDetailPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Lib\Common\ExtendStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Lib\UI\DefaultViewItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lib\UI\DrawingInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lib\UI\DrawingGrouping.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lib\UI\DrawingSorting.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Lib\UI\FlipViewItem.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Lib\UI\ViewerItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Login.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="CoverZoomLib, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\CoverZoomLib.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\RevealCommonSvc\" />
+    <WCFMetadataStorage Include="Service References\RevealProjectSvc\" />
+    <WCFMetadataStorage Include="Service References\RevealUserSvc\" />
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '11.0' ">
+    <VisualStudioVersion>11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,106 @@
+﻿<control:LayoutAwarePage
+    x:Name="pageRoot"
+    x:Class="Element.Reveal.Manage.Discipline.Survey.QS_VerifyComponents"
+    DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Self}}"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Element.Reveal.Manage.Discipline.Survey"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:data="using:WinAppLibrary.ServiceModels"
+    xmlns:ui="using:Element.Reveal.Manage.Lib.UI"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:control="using:WinAppLibrary.Controls"
+    xmlns:converter="using:WinAppLibrary.Converters"
+    mc:Ignorable="d">
+    <Page.Resources>
+        <!-- Collection of items displayed by this page -->
+        <CollectionViewSource
+            x:Name="cvDrawingList" 
+            IsSourceGrouped="True"
+            Source="{Binding Drawings}"
+            ItemsPath="TopItems"/>
+    </Page.Resources>
+
+    <Grid x:Name="LayoutRoot" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <Grid.Background>
+            <ImageBrush ImageSource="/Assets/Survey/VerifyComponentsandDrawings_bg.jpg"
+                        Stretch="UniformToFill" />
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="60"/>
+        </Grid.RowDefinitions>
+        <Grid x:Name="grBackButton" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30,35,0,0">
+            <Button x:Name="backButton" Click="backButton_Click" Style="{StaticResource BackButtonStyle}" VerticalAlignment="Center" 
+                    Padding="0" Margin="10" />
+
+        </Grid>
+        <!-- Horizontal scrolling grid used in most view states -->
+        <ScrollViewer
+            x:Name="ScrollViewer"
+            Grid.Row="1" Grid.ColumnSpan="2"
+            AutomationProperties.AutomationId="ItemGridScrollViewer"
+            Style="{StaticResource HorizontalScrollViewerStyle}">
+            <Grid x:Name="LayoutSub" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="120"/>
+                    <ColumnDefinition Width="300" />
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="800" />
+                    <ColumnDefinition Width="1100" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="IWP Name" Grid.Column="1" VerticalAlignment="Bottom" FontSize="25" Margin="0,0,0,10"/>
+                <ListView x:Name="lvDrawing"
+                          Grid.Column="1"
+                          Grid.Row="1"
+                          ItemsSource="{Binding Source={StaticResource cvDrawingList}}" 
+                          HorizontalAlignment="Left"
+                          VerticalAlignment="Stretch"
+                          AutomationProperties.AutomationId="DrawingViewer"
+                          AutomationProperties.Name="Drawing Items"
+                          ScrollViewer.VerticalScrollMode="Enabled"
+                          ScrollViewer.VerticalScrollBarVisibility="Auto"
+                          SelectionMode="Single"
+                          IsItemClickEnabled="True"
+                          IsSynchronizedWithCurrentItem="False"
+                          ItemClick="lvDrawing_ItemClick">
+                    <ListView.RenderTransform>
+                        <TranslateTransform x:Name="TranslateTransSemnatic" />
+                    </ListView.RenderTransform>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Height="150">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="250"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <ui:DefaultViewItem HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ImageSource="{Binding ImagePath}" />
+                                <Grid Height="50" Grid.ColumnSpan="2" VerticalAlignment="Bottom" Background="Black" Opacity="0.9">
+                                    <TextBlock Text="{Binding Title}" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" />
+                                </Grid>
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <ui:DrawingEditor x:Name="DrawingEditor" Grid.Row="1" Grid.Column="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                <ui:VerifyComponent x:Name="uiVerify" Grid.Row="0" Grid.RowSpan="2" Grid.Column="4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+            </Grid>
+        </ScrollViewer>
+        <Button Name="saveButton" Click="saveButton_Click" Grid.Row="2" HorizontalAlignment="Right" Visibility="Collapsed">
+            <Button.Template>
+                <ControlTemplate>
+                    <Grid>
+                        <Image Source="/Assets/Survey/save.jpg"/>
+                        <TextBlock Text="Save" Foreground="YellowGreen" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+    </Grid>
+    
+</control:LayoutAwarePage>

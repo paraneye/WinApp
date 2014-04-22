@@ -1,0 +1,352 @@
+﻿<control:LayoutAwarePage
+    x:Class="Element.Reveal.Meg.Discipline.Schedule.BuildIWP.SelectIWP"
+    DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Self}}"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Element.Reveal.Meg.Discipline.Schedule.BuildIWP"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:control="using:WinAppLibrary.Controls"
+    xmlns:ui="using:Element.Reveal.Meg.Lib.UI"
+    xmlns:appui="using:WinAppLibrary.UI"
+    mc:Ignorable="d">
+    <Page.Resources>
+        <CollectionViewSource 
+            x:Name="cvScheduleList" 
+            IsSourceGrouped="True"
+            Source="{Binding Schedules}"
+            ItemsPath="TopItems"/>
+    </Page.Resources>
+    <Grid x:Name="LayoutRoot">
+        <Grid.Background>
+            <ImageBrush ImageSource="/Assets/selectschedulelineitem_bg.png"
+                    Stretch="UniformToFill" />
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="120" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="154"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid x:Name="grBackButton" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="0,0,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="58"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="120"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="btnBack" Click="btnBack_Click" Style="{StaticResource BackButtonStyle}" VerticalAlignment="Top" HorizontalAlignment="Center" Grid.Row="1" />
+            <TextBlock x:Name="tbpageTitle" Grid.Column="1" Grid.Row="1" Text="Select Installation Work Package" FontSize="56" Foreground="{StaticResource MediumGreen}"  FontFamily="Segoe UI Light"
+                       VerticalAlignment="Top" HorizontalAlignment="Left" />
+        </Grid>  
+        <ScrollViewer
+            x:Name="ScrollViewer"
+            Grid.Row="1" Grid.Column="1"            
+            AutomationProperties.AutomationId="ItemGridScrollViewer"
+            Style="{StaticResource HorizontalScrollViewerStyle}"
+            RenderTransformOrigin="0.5, 0.5"
+            VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
+            ScrollViewer.HorizontalScrollMode="Enabled"
+            ScrollViewer.HorizontalScrollBarVisibility="Auto"
+            ScrollViewer.IsHorizontalScrollChainingEnabled="False"><!--ViewChanged="ScrollViewer_ViewChanged"-->
+            <ScrollViewer.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform x:Name="ScaleTransScroll" ScaleX="1" ScaleY="1" />
+                    <TranslateTransform x:Name="TranTransScroll" X="0" Y="0" />
+                </TransformGroup>
+            </ScrollViewer.RenderTransform>
+            <GridView x:Name="gvSchedule" Height="545"
+                    ItemsSource="{Binding Source={StaticResource cvScheduleList}}"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Top"                      
+                    AutomationProperties.AutomationId="DrawingViewer"
+                    AutomationProperties.Name="Drawing Items"
+                    SelectionMode="Single"                    
+                    IsSynchronizedWithCurrentItem="False" IsZoomedInView="False"
+                    SelectionChanged="gvSchedule_SelectionChanged">
+                <GridView.RenderTransform>
+                    <TranslateTransform x:Name="TranslateTransSemnatic" />
+                </GridView.RenderTransform>
+                <GridView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal" >
+                            <TextBlock Text="{Binding Title}" Margin="10" FontSize="15" LineHeight="16" FontFamily="Segoe UI Regular" Width="215" VerticalAlignment="Stretch" TextWrapping="Wrap" />
+                        </StackPanel>
+                    </DataTemplate>
+                </GridView.ItemTemplate>
+                <GridView.ItemsPanel>
+                    <ItemsPanelTemplate>                        
+                        <VirtualizingStackPanel Orientation="Horizontal" SizeChanged="WrapGrid_SizeChanged" />
+                    </ItemsPanelTemplate>
+                </GridView.ItemsPanel>
+                <GridView.GroupStyle>
+                    <GroupStyle>
+                        <GroupStyle.HeaderTemplate>
+                            <DataTemplate>
+                                <Grid Height="150">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"></RowDefinition>
+                                        <RowDefinition Height="20"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <TextBlock Text="{Binding Title}" Margin="10" FontSize="22" FontFamily="Segoe UI Light" Foreground="{StaticResource MediumGreen}"  Width="215" VerticalAlignment="Top" TextWrapping="Wrap" Grid.Row="0"/>
+                                    <Image Width="235" VerticalAlignment="Top" Grid.Row="1">
+                                        <Image.Source>
+                                            <BitmapImage UriSource="/Assets/selectschedulelineitem_line.png" DecodePixelWidth="235" DecodePixelHeight="20" />
+                                        </Image.Source>
+                                    </Image>
+                                </Grid>
+                            </DataTemplate>
+                        </GroupStyle.HeaderTemplate>
+                        <GroupStyle.ContainerStyle>
+                            <Style TargetType="GroupItem">
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="GroupItem" >
+                                            <Grid Margin="0,0,10,0">
+                                                <Grid.Background>
+                                                    <SolidColorBrush Color="Black" Opacity="0.5" />
+                                                </Grid.Background>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="Auto"/>
+                                                    <RowDefinition Height="*"/>
+                                                </Grid.RowDefinitions>
+                                                <ContentPresenter Content="{TemplateBinding Content}" Grid.Row="0"/>
+                                                <ItemsControl x:Name="ItemsControl" ItemsSource="{Binding GroupItems}" Grid.Row="1">
+                                                    <ItemsControl.Template>
+                                                        <ControlTemplate>
+                                                            <ScrollViewer x:Name="ScrollViewer" VerticalScrollBarVisibility="Hidden" VerticalScrollMode="Enabled" HorizontalScrollBarVisibility="Disabled" HorizontalScrollMode="Disabled">
+                                                                <ItemsPresenter />
+                                                            </ScrollViewer>
+                                                        </ControlTemplate>
+                                                    </ItemsControl.Template>
+                                                </ItemsControl>
+
+                                            </Grid>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </GroupStyle.ContainerStyle>
+                    </GroupStyle>
+                </GridView.GroupStyle>
+            </GridView>
+        </ScrollViewer>
+        <Grid x:Name="detailPanel" Grid.RowSpan="2" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Collapsed">
+            <Grid.Background>
+                <SolidColorBrush Color="Black" Opacity="0.8" />
+            </Grid.Background>
+        </Grid>
+        <Grid x:Name="grScheduleDetail" Grid.RowSpan="2" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <Grid.RenderTransform>
+                <TransformGroup>
+                    <TranslateTransform x:Name="detailPanelTrans" />
+                    <ScaleTransform x:Name="detailPanelScale" ScaleY="0" />
+                </TransformGroup>
+            </Grid.RenderTransform>
+            <ui:IWPDetail x:Name="ucIWPDetail" Width="400" HorizontalAlignment="Right" VerticalAlignment="Stretch"></ui:IWPDetail>
+        </Grid>
+        <Grid x:Name="grNewIWP" Grid.RowSpan="2" Grid.ColumnSpan="2"  Visibility="Collapsed">
+            <Grid.Background>
+                <SolidColorBrush Color="Black" Opacity="0.8" />
+            </Grid.Background>
+            <Grid HorizontalAlignment="Center" VerticalAlignment="Center"  Background="#7b91a2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="20" />
+                    <ColumnDefinition Width="110" />
+                    <ColumnDefinition Width="20" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="20" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="200"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="20"/>
+                </Grid.RowDefinitions>
+                <StackPanel Background="#1a242c" Grid.ColumnSpan="5" Grid.Row="0">
+                    <TextBlock Text="Create New Installation Work Package" FontSize="26" FontFamily="Segoe UI light" Margin="20,20,0,0" Foreground="{StaticResource MediumGreen}" ></TextBlock>
+                </StackPanel>
+                <StackPanel Grid.Row="2" Grid.Column="1" VerticalAlignment="Center">
+                    <TextBlock Text="IWP Name" FontSize="15" FontFamily="Segoe UI semilight" Foreground="#fff" ></TextBlock>
+                </StackPanel>
+                <StackPanel Grid.Row="2" Grid.Column="3" HorizontalAlignment="Left" VerticalAlignment="Center">
+                    <TextBox x:Name="txtIWPName" FontSize="15" TabIndex="0" VerticalAlignment="Top" Width="555" Height="30"/>
+                </StackPanel>
+                <StackPanel Grid.Row="4" Grid.Column="1">
+                    <TextBlock Text="Description" FontSize="15" FontFamily="Segoe UI semilight" Foreground="#fff" ></TextBlock>
+                </StackPanel>
+                <StackPanel Grid.Row="4" Grid.Column="3" HorizontalAlignment="Left">
+                    <TextBox x:Name="txtDescription" FontSize="15" TabIndex="0" VerticalAlignment="Top" Width="555" Height="215" AcceptsReturn="True" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+                </StackPanel>
+                <StackPanel Grid.Row="6" Grid.Column="1">
+                    <TextBlock Text="Select Foreman" FontSize="15" FontFamily="Segoe UI semilight" Foreground="#fff" ></TextBlock>
+                </StackPanel>
+                <StackPanel Grid.Row="6" Grid.Column="3" HorizontalAlignment="Left">
+                    <ListView x:Name="lvNForeman" Width="555" Height="190"
+                    Grid.Row="2" Grid.Column="0" 
+                    HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                    SelectionMode="Single" IsItemClickEnabled="False" IsSwipeEnabled="False" 
+                    HorizontalContentAlignment="Stretch"
+                    ScrollViewer.VerticalScrollBarVisibility="Auto" 
+                    ScrollViewer.HorizontalScrollBarVisibility="Disabled" >
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid Width="150" Height="90" Background="#1a242c" Margin="0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="90" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <StackPanel Orientation="Vertical" Margin="10" Grid.Row="0" Grid.Column="0">
+                                        <Image Source="/Assets/common_default_foreman.png" Width="70" Height="70" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Stretch="Fill"></Image>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Vertical" Margin="0,10,10,0" Grid.Row="0" Grid.Column="1">
+                                        <TextBlock Text="{Binding DataName}" FontSize="12" FontFamily="Segoe UI regular" Width="50" TextWrapping="Wrap"/>
+                                    </StackPanel>
+                                </Grid>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                        <ListView.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapGrid Orientation="Horizontal" MaximumRowsOrColumns="3"></WrapGrid>
+                            </ItemsPanelTemplate>
+                        </ListView.ItemsPanel>
+                    </ListView>
+                </StackPanel>
+                <StackPanel Grid.Row="8" Grid.Column="3" HorizontalAlignment="Right" Orientation="Horizontal">
+                    <Button x:Name="btnNSave" Click="btnNSave_Click" Width="90">Save</Button>
+                    <Button x:Name="btnNCancel" Click="btnNCancel_Click" Width="90">Cancel</Button>
+                </StackPanel>
+            </Grid>
+        </Grid>
+        <Grid x:Name="grUpdateIWP" Grid.RowSpan="2" Grid.ColumnSpan="2" Visibility="Collapsed">
+            <Grid.Background>
+                <SolidColorBrush Color="Black" Opacity="0.8" />
+            </Grid.Background>
+            <Grid HorizontalAlignment="Center" VerticalAlignment="Center"  Background="#7b91a2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="20" />
+                    <ColumnDefinition Width="110" />
+                    <ColumnDefinition Width="20" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="20" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="20"/>
+                </Grid.RowDefinitions>
+                <StackPanel Background="#1a242c" Grid.ColumnSpan="5" Grid.Row="0">
+                    <TextBlock x:Name="txtIwpTitle" Text="Edit" FontSize="26" FontFamily="Segoe UI light" Margin="20,20,0,0" Foreground="{StaticResource MediumGreen}" ></TextBlock>
+                </StackPanel>
+                <StackPanel Grid.Row="2" Grid.Column="1">
+                    <TextBlock Text="Description" FontSize="15" FontFamily="Segoe UI semilight" Foreground="#fff" ></TextBlock>
+                </StackPanel>
+                <StackPanel Grid.Row="2" Grid.Column="3" HorizontalAlignment="Left">
+                    <TextBox x:Name="txtUDescription" TabIndex="0" VerticalAlignment="Top" Width="555" Height="60"  AcceptsReturn="True" ScrollViewer.VerticalScrollBarVisibility="Auto" FontSize="15"/>
+                </StackPanel>
+                <StackPanel Grid.Row="4" Grid.Column="1" VerticalAlignment="Center">
+                    <TextBlock Text="Construction Work Package" FontSize="15" FontFamily="Segoe UI semilight" Foreground="#fff" TextWrapping="Wrap" ></TextBlock>
+                </StackPanel>
+                <StackPanel Grid.Row="4" Grid.Column="3" HorizontalAlignment="Left">
+                    <ComboBox x:Name="cbCWP" Width="250" Visibility="Collapsed">
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <TextBlock Grid.Column="1" Text="{Binding DataName}"  FontSize="15" />
+                                </Grid>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
+                    <TextBox x:Name="txtCWP" TabIndex="0" VerticalAlignment="Center" Width="250" Height="25" IsReadOnly="True"  FontSize="15" />
+                </StackPanel>
+                <StackPanel Grid.Row="6" Grid.Column="1" VerticalAlignment="Center">
+                    <TextBlock Text="Start Date" FontSize="15" FontFamily="Segoe UI semilight" Foreground="#fff" ></TextBlock>
+                </StackPanel>
+                <StackPanel Grid.Row="6" Grid.Column="3" HorizontalAlignment="Left">
+                    <TextBox x:Name="txtStartDate" TabIndex="0" VerticalAlignment="Top" Width="250" Height="25" IsReadOnly="True"  FontSize="15"/>
+                </StackPanel>
+                <StackPanel Grid.Row="8" Grid.Column="1" VerticalAlignment="Center">
+                    <TextBlock Text="End Date" FontSize="15" FontFamily="Segoe UI semilight" Foreground="#fff" ></TextBlock>
+                </StackPanel>
+                <StackPanel Grid.Row="8" Grid.Column="3" HorizontalAlignment="Left">
+                    <TextBox x:Name="txtEndDate" TabIndex="0" VerticalAlignment="Center" Width="250" Height="28" IsReadOnly="True"  FontSize="15"/>
+                </StackPanel>
+                <StackPanel Grid.Row="10" Grid.Column="1" VerticalAlignment="Center">
+                    <TextBlock Text="Assigned Crews" FontSize="15" FontFamily="Segoe UI semilight" Foreground="#fff" ></TextBlock>
+                </StackPanel>
+                <StackPanel Grid.Row="10" Grid.Column="3" HorizontalAlignment="Left">
+                    <TextBox x:Name="txtAssignedCrews" TabIndex="0" VerticalAlignment="Center" Width="250" Height="28" IsReadOnly="True"  FontSize="15"/>
+                </StackPanel>
+                <StackPanel Grid.Row="12" Grid.Column="1" VerticalAlignment="Center">
+                    <TextBlock Text="Total Manhours" FontSize="15" FontFamily="Segoe UI semilight" Foreground="#fff" ></TextBlock>
+                </StackPanel>
+                <StackPanel Grid.Row="12" Grid.Column="3" HorizontalAlignment="Left">
+                    <TextBox x:Name="txtTotalManhours" TabIndex="0" VerticalAlignment="Center" Width="250" Height="28" IsReadOnly="True"  FontSize="15"/>
+                </StackPanel>
+                <StackPanel Grid.Row="14" Grid.Column="1">
+                    <TextBlock Text="Foreman" FontSize="15" FontFamily="Segoe UI semilight" Foreground="#fff" ></TextBlock>
+                </StackPanel>
+                <StackPanel Grid.Row="14" Grid.Column="3" HorizontalAlignment="Left">
+                    <ListView x:Name="lvUForeman" Width="555" Height="190"
+                    Grid.Row="2" Grid.Column="0" 
+                    HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                    SelectionMode="Single" IsItemClickEnabled="False" IsSwipeEnabled="False" 
+                    HorizontalContentAlignment="Stretch"
+                    ScrollViewer.VerticalScrollBarVisibility="Auto" 
+                    ScrollViewer.HorizontalScrollBarVisibility="Disabled" >
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid Width="150" Height="90" Background="#1a242c" Margin="0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="90" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <StackPanel Orientation="Vertical" Margin="10" Grid.Row="0" Grid.Column="0">
+                                        <Image Source="/Assets/common_default_foreman.png" Width="70" Height="70" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Stretch="Fill"></Image>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Vertical" Margin="0,10,10,0" Grid.Row="0" Grid.Column="1">
+                                        <TextBlock Text="{Binding DataName}" FontSize="12" FontFamily="Segoe UI regular" Width="50" TextWrapping="Wrap"/>
+                                    </StackPanel>
+                                </Grid>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                        <ListView.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapGrid Orientation="Horizontal" MaximumRowsOrColumns="3"></WrapGrid>
+                            </ItemsPanelTemplate>
+                        </ListView.ItemsPanel>
+                    </ListView>
+                </StackPanel>
+                <StackPanel Grid.Row="16" Grid.Column="3" HorizontalAlignment="Right" Orientation="Horizontal">
+                    <Button x:Name="btnUSave" Click="btnUSave_Click" Width="90">Save</Button>
+                    <Button x:Name="btnUCancel" Click="btnUCancel_Click" Width="90">Cancel</Button>
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Grid>
+</control:LayoutAwarePage>

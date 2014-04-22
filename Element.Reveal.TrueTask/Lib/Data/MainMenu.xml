@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<GroupModel>
+  <Group uniqueId = "Build" title = "Build" imagePath = "Assets/DarkGray.png">
+    <DataItem uniqueId = "BuildSchedule" title = "Build Schedule" imagePath = "Assets/truetask_icon_buildschedule.png" content = ""/>
+    <DataItem uniqueId = "BuildIWP" title = "Build IWP" imagePath = "Assets/truetask_icon_buildiwp.png" content = ""/>
+    <!--<DataItem uniqueId = "BuildSIWP" title = "Build SIWP" imagePath = "Assets/truetask_icon_buildsiwp.png" content = ""/>-->
+    <!--<DataItem uniqueId = "BuildHydro" title = "Build Hydro" imagePath = "Assets/truetask_icon_buildhydropackage.png" content = ""/>-->
+  </Group>
+  <Group uniqueId = "Manage and Maintain" title = "Manage and Maintain" imagePath = "Assets/DarkGray.png">
+    <DataItem uniqueId = "ManageSchedule" title = "Manage Schedule" imagePath = "Assets/truetask_icon_manageschedule.png" content = ""/>
+    <DataItem uniqueId = "AssembleIWP" title = "Assemble IWP" imagePath = "Assets/truetask_icon_assemblesiwp.png" content = ""/>
+    <DataItem uniqueId = "SignOffStatus" title = "SignOff Status" imagePath = "Assets/truetask_icon_signoffstatus.png" content = ""/>
+    <!--<DataItem uniqueId = "AssembleSIWP" title = "Assemble SIWP" imagePath = "Assets/truetask_icon_assemblesiwp.png" content = ""/>-->
+    <!--<DataItem uniqueId = "AssembleHydroPackage" title = "Assemble Hydro Package" imagePath = "Assets/truetask_icon_assemblehydropackage.png" content = ""/>-->
+  </Group>
+  <Group uniqueId = "Viewer" title = "Viewer" imagePath = "Assets/DarkGray.png">
+    <DataItem uniqueId = "DrawingViewer" title = "Drawing Viewer" imagePath = "Assets/truetask_icon_drawingviewer.png" content = ""/>
+    <DataItem uniqueId = "IWPViewer" title = "IWP Viewer" imagePath = "Assets/truetask_icon_iwpviewer.png" content = ""/>
+    <!--<DataItem uniqueId = "SIWPViewer" title = "SIWP Viewer" imagePath = "Assets/truetask_icon_siwpviewer.png" content = ""/>-->
+    <!--<DataItem uniqueId = "HydroViewer" title = "Hydro Viewer" imagePath = "Assets/truetask_icon_hydropackageviewer.png" content = ""/>-->
+    <!--<DataItem uniqueId = "CSUViewer" title = "CSU Viewer" imagePath = "Assets/truetask_icon_CSUViewer.png" content = ""/>-->
+  </Group>
+</GroupModel>

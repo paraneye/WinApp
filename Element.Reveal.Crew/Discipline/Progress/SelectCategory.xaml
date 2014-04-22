@@ -1,0 +1,59 @@
+﻿<control:LayoutAwarePage
+    x:Class="Element.Reveal.Crew.Discipline.Progress.SelectCategory"
+    DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Self}}"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Element.Reveal.Crew.Discipline.Progress"
+    xmlns:control="using:WinAppLibrary.Controls"
+    xmlns:ui="using:Element.Reveal.Crew.Lib.UI"
+    xmlns:appui="using:WinAppLibrary.UI"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Page.Resources>
+        <CollectionViewSource 
+                x:Name="cvDrawingList" 
+                Source="{Binding Drawings}" />
+    </Page.Resources>
+    <Page.BottomAppBar>
+        <AppBar x:Name="BottomBarSetting" AutomationProperties.Name="Page Option">
+            <ui:ProgressCategoryBottomBar HorizontalAlignment="Stretch" SubmitClick="BottomBar_SubmitClick" UnselectClick="BottomBar_SubmitClick" />
+        </AppBar>
+    </Page.BottomAppBar>
+    
+    <Grid x:Name="LayoutRoot" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <Grid.Background>
+            <ImageBrush ImageSource="/Assets/progress_bg_select.png" Stretch="UniformToFill" />
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="120" />
+            <ColumnDefinition Width="310" />
+            <ColumnDefinition Width="65" />
+            <ColumnDefinition Width="320" />
+            <ColumnDefinition Width="65" />
+            <ColumnDefinition Width="160" />
+            <ColumnDefinition Width="65" />
+            <ColumnDefinition Width="246" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="110"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="35" />
+        </Grid.RowDefinitions>
+        
+        <!-- Category List ===============================================================================================-->
+        <ui:ProgressIWPList x:Name="IwpList" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" 
+                            ItemClick="CategoryList_Click" />
+
+        <ui:ProgressMaterialList x:Name="MaterialList" Grid.Row="1" Grid.Column="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" 
+                                 ItemClick="CategoryList_Click" />
+
+        <ui:ProgressRuleOfCreditList x:Name="RuleofCreditList" Grid.Row="1" Grid.Column="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" 
+                                     ItemClick="CategoryList_Click" />
+        <ui:ProgressDrawingList x:Name="DrawingList" Grid.Row="1" Grid.Column="7" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                                ItemClick="DrawingList_Click" />
+        
+        <appui:DrawingEditor x:Name="DrawingEditor" Grid.RowSpan="3" Grid.ColumnSpan="8" Canvas.ZIndex="5" 
+                             HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Closed="DrawingEditor_Closed" />
+    </Grid>
+</control:LayoutAwarePage>

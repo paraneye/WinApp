@@ -1,0 +1,259 @@
+﻿<control:LayoutAwarePage
+    x:Class="Element.Reveal.Crew.Discipline.Progress.InputTimeProgress_Old"
+    DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Self}}"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Element.Reveal.Crew.Discipline.Progress"
+    xmlns:control="using:WinAppLibrary.Controls"
+    xmlns:ui="using:Element.Reveal.Crew.Lib.UI"
+    xmlns:DatePicker="using:DatePicker"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Page.Resources>
+        <CollectionViewSource x:Name="cvsTimesheet" Source="{Binding Timesheet}" />
+        <CollectionViewSource x:Name="cvsComponent" Source="{Binding Component}" />
+        <Storyboard x:Name="sbSlideOff">
+            <DoubleAnimation Storyboard.TargetName="TranTransTop" Storyboard.TargetProperty="Y" To="0" Duration="00:00:00.5" BeginTime="00:00:00.2" />
+            <DoubleAnimation Storyboard.TargetName="grBackPanel" Storyboard.TargetProperty="Opacity" To="0" Duration="00:00:00.3" />
+            <DoubleAnimation Storyboard.TargetName="ScaleTrfBackPanel" Storyboard.TargetProperty="ScaleX" To="0" Duration="00:00:00.3" />
+            <DoubleAnimation Storyboard.TargetName="ScaleTrfBackPanel" Storyboard.TargetProperty="ScaleY" To="0" Duration="00:00:00.3" />            
+        </Storyboard>
+        <Storyboard x:Name="sbSLideUp">            
+            <DoubleAnimation x:Name="dbaniSlideUp" Storyboard.TargetName="TranTransTop" Storyboard.TargetProperty="Y" Duration="00:00:00.5"/>
+            <DoubleAnimation Storyboard.TargetName="grBackPanel" Storyboard.TargetProperty="Opacity" To="1" Duration="00:00:00.5" BeginTime="00:00:00.4" />
+            <DoubleAnimation Storyboard.TargetName="ScaleTrfBackPanel" Storyboard.TargetProperty="ScaleX" To="1" Duration="00:00:00.5" BeginTime="00:00:00.4" />
+            <DoubleAnimation Storyboard.TargetName="ScaleTrfBackPanel" Storyboard.TargetProperty="ScaleY" To="1" Duration="00:00:00.5" BeginTime="00:00:00.4" />            
+        </Storyboard>
+        <Style x:Key="TableTitle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontFamily" Value="Segoe UI Symbol" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Stretch" />
+            <Setter Property="TextAlignment" Value="Center" />
+        </Style>
+        <Style x:Key="TableDescription" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontFamily" Value="Segoe UI Symbol" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Stretch" />
+            <Setter Property="TextAlignment" Value="Left" />
+            <Setter Property="TextWrapping" Value="Wrap" />
+        </Style>
+        <Style x:Key="TableInputStyle" TargetType="TextBox">
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Stretch" />
+            <Setter Property="TextAlignment" Value="Left" />
+            <Setter Property="FontSize" Value="16" />            
+        </Style>
+    </Page.Resources>
+    <Page.BottomAppBar>
+        <AppBar x:Name="BottomBarSetting" AutomationProperties.Name="Page Option">
+            <ui:TimeProgressBottomBar HorizontalAlignment="Stretch" AppbarButtonClick="BottomBar_SubmitClick"/>
+        </AppBar>
+    </Page.BottomAppBar>
+    
+    <Grid x:Name="LayoutRoot" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <Grid.Background>
+            <ImageBrush ImageSource="/Assets/progress_bg_select.png" Stretch="UniformToFill" />
+        </Grid.Background>
+        
+        <!-- Front Panel ===========================================================================================================================================-->
+        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Canvas.ZIndex="1" SizeChanged="LayoutRoot_SizeChanged" >
+            <Grid.RenderTransform>
+                <TranslateTransform x:Name="TranTransTop" />
+            </Grid.RenderTransform>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="120" />
+                <ColumnDefinition Width="5*" />
+                <ColumnDefinition Width="40" />
+                <ColumnDefinition Width="5*" />
+                <ColumnDefinition Width="10" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="110"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="50" />
+            </Grid.RowDefinitions>
+
+            <!-- Selected Crew List ============================================================================================================================= -->
+            <Grid x:Name="grCrew" Grid.Row="1" Grid.Column="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Rectangle Grid.Row="1" Fill="Black" Opacity="0.7" 
+                           HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+                <!-- Subtitle ==============================================================================-->
+                <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
+                    <TextBlock Style="{StaticResource CrewSubTitleStyle}" Text="Crews" />
+                </Grid>
+
+                <!-- List Title ============================================================================-->
+                <Grid Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="10" />
+                        <ColumnDefinition Width="20*" />
+                        <ColumnDefinition Width="17*" />
+                        <ColumnDefinition Width="17*" />
+                        <ColumnDefinition Width="17*" />
+                        <ColumnDefinition Width="17*" />                      
+                        <ColumnDefinition Width="12*" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="1" Style="{StaticResource TableTitle}" Text="Crew Name" />
+                    <TextBlock Grid.Column="2" Style="{StaticResource TableTitle}" Text="ST" />
+                    <TextBlock Grid.Column="3" Style="{StaticResource TableTitle}" Text="OT" />
+                    <TextBlock Grid.Column="4" Style="{StaticResource TableTitle}" Text="DT" />
+                    <TextBlock Grid.Column="5" Style="{StaticResource TableTitle}" Text="Type of" />
+                </Grid>
+
+                <!-- List =====================================================================================-->
+                <ListView x:Name="lvSelectedCrew"
+                          Grid.Row="2" Padding="10,0,0,0"
+                          AutomationProperties.AutomationId="ComponentListView"
+                          AutomationProperties.Name="Grouped Components"
+                          VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
+                          HorizontalContentAlignment="Stretch"
+                          ScrollViewer.VerticalScrollBarVisibility="Hidden"
+                          SelectionMode="None" IsItemClickEnabled="False" 
+                          IsSwipeEnabled="True" CanDragItems="True" 
+                          CanReorderItems="True" AllowDrop="True"
+                          ItemsPanel="{StaticResource StickyNoteItemsPanelTemplate}"
+                          ItemsSource="{Binding Source={StaticResource cvsTimesheet}}"
+                          ItemContainerStyle="{StaticResource RevealListViewAlternateStyle}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="80" Tag="Crew"
+                                  SizeChanged="Grid_SizeChanged">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="20*" />
+                                    <ColumnDefinition Width="17*" />
+                                    <ColumnDefinition Width="17*" />
+                                    <ColumnDefinition Width="17*" />
+                                    <ColumnDefinition Width="17*" />
+                                    <ColumnDefinition Width="12*" />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Style="{StaticResource TableDescription}" Margin="2"
+                                           ToolTipService.ToolTip="{Binding EmployeeFullName}" Text="{Binding EmployeeFullName}" />
+                                <TextBox x:Name="tbStraight" Grid.Column="1" Style="{StaticResource TableInputStyle}"
+                                         Text="" LostFocus="TextBox_LostFocus" Margin="2" Tag="StraightTime" InputScope="Number" />
+                                <TextBox x:Name="tbTimeHalf" Grid.Column="2" Style="{StaticResource TableInputStyle}"
+                                         Text="" LostFocus="TextBox_LostFocus"  Margin="2" Tag="TimeAndHalf" InputScope="Number" />
+                                <TextBox x:Name="tbDouble" Grid.Column="3" Style="{StaticResource TableInputStyle}" Text=""
+                                         LostFocus="TextBox_LostFocus" Margin="2" Tag="DoubleTime" InputScope="Number" />
+                                <TextBlock x:Name="tbTypeof" Grid.Column="4" Style="{StaticResource TableDescription}"
+                                           Text="{Binding TypeOf, Mode=TwoWay}" Margin="2,2,0,2" Tag="TypeOf" />
+                                <Grid Grid.Column="5" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0,0,0">
+                                    <Button BorderThickness="0" Padding="0" Tag="Crew" Click="Delete_Click" HorizontalAlignment="Center" >
+                                        <Image Source="/Assets/crew_delete.png" Width="20" Height="20" Stretch="UniformToFill" />
+                                    </Button>
+                                </Grid>
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+            
+            <!-- Selected Component ============================================================================================================================== -->
+            <Grid Grid.Row="1" Grid.Column="3" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Rectangle Grid.Row="1" Fill="Black" Opacity="0.7" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+                <!-- Subtitle ==============================================================================-->
+                <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">                    
+                    <TextBlock Style="{StaticResource CrewSubTitleStyle}" Text="Components" />
+                </Grid>
+                
+                <!-- List Title ============================================================================-->
+                <Grid Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Top">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="10" />
+                        <ColumnDefinition Width="18*" />
+                        <ColumnDefinition Width="18*" />
+                        <ColumnDefinition Width="18*" />
+                        <ColumnDefinition Width="17*" />
+                        <ColumnDefinition Width="17*" />
+                        <ColumnDefinition Width="12*" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="1" Style="{StaticResource TableTitle}" Text="EngTag" />
+                    <TextBlock Grid.Column="2" Style="{StaticResource TableTitle}" Text="PartNo" />
+                    <TextBlock Grid.Column="3" Style="{StaticResource TableTitle}" Text="Ratio" />
+                    <TextBlock Grid.Column="4" Style="{StaticResource TableTitle}" Text="%Complete" />
+                    <TextBlock Grid.Column="5" Style="{StaticResource TableTitle}" Text="Actual" />
+                </Grid>
+                
+                <!-- List =====================================================================================-->
+                <ListView x:Name="lvSelectedComponent" 
+                          Grid.Row="2" Padding="10,0,0,0"
+                          AutomationProperties.AutomationId="ComponentListView"
+                          AutomationProperties.Name="Grouped Components"
+                          VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
+                          HorizontalContentAlignment="Stretch"
+                          ScrollViewer.VerticalScrollBarVisibility="Auto"
+                          SelectionMode="None" 
+                          IsItemClickEnabled="False" 
+                          IsSwipeEnabled="True"
+                          CanDragItems="True" CanReorderItems="True"
+                          AllowDrop="True"                                    
+                          ItemsPanel="{StaticResource StickyNoteItemsPanelTemplate}"
+                          ItemsSource="{Binding Source={StaticResource cvsComponent}}"
+                          ItemContainerStyle="{StaticResource RevealListViewAlternateStyle}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="80" Tag="Component"
+                                  SizeChanged="Grid_SizeChanged">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="18*" />
+                                    <ColumnDefinition Width="18*" />
+                                    <ColumnDefinition Width="18*" />
+                                    <ColumnDefinition Width="18*" />
+                                    <ColumnDefinition Width="18*" />
+                                    <ColumnDefinition Width="10*" />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Style="{StaticResource TableDescription}" Margin="2" 
+                                       ToolTipService.ToolTip="{Binding TagNumber}" Text="{Binding TagNumber}" />
+                                <TextBlock Grid.Column="1" Style="{StaticResource TableDescription}" Margin="2" 
+                                           ToolTipService.ToolTip="{Binding TagNumber}" Text="{Binding TagNumber}" />
+                                <TextBlock Grid.Column="2" Style="{StaticResource TableDescription}" Margin="2" >
+                                        <Run Text="Installed: " /><LineBreak />
+                                        <Run x:Name="tbOriginal" Text="{Binding InstalledQtyRatio, Mode=OneTime}" />
+                                </TextBlock>
+                                <TextBox Grid.Column="3" Style="{StaticResource TableInputStyle}" Margin="2" 
+                                         Tag="InstalledQtyRatio" Text="" LostFocus="TextBox_LostFocus" InputScope="Number" />
+                                <TextBox Grid.Column="4" Style="{StaticResource TableInputStyle}" Margin="2,2,0,2" 
+                                         Text="{Binding ActualInstalled, Mode=TwoWay}" LostFocus="TextBox_LostFocus" Tag="ActualInstalled"/>
+                                <Grid Grid.Column="5" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0,0,0">
+                                    <Button BorderThickness="0" Padding="0" Tag="Component" Click="Delete_Click" >
+                                        <Image Source="/Assets/crew_delete.png" Width="20" Height="20" Stretch="UniformToFill" />
+                                    </Button>
+                                </Grid>
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+            
+        </Grid>
+
+        <!-- Back Panel =========================================================================================================================================== -->
+        <Grid x:Name="grBackPanel" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+              SizeChanged="grRightPanel_SizeChanged" Canvas.ZIndex="0" Margin="50,0,50,0" RenderTransformOrigin="0.5, 0.5" >
+            <Grid.RenderTransform>
+                <ScaleTransform x:Name="ScaleTrfBackPanel" ScaleX="0" ScaleY="0" />
+            </Grid.RenderTransform>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="90"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            
+            <!-- Report Panel ================================================================================================== -->
+            <ui:TimeSheetTotal x:Name="TimeSheetTotal" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        </Grid>
+    </Grid>
+</control:LayoutAwarePage>

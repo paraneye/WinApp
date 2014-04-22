@@ -1,0 +1,14 @@
+﻿<control:LayoutAwarePage
+    x:Class="Element.Reveal.TrueTask.Discipline.Schedule.BuildSchedule.SelectCWP"
+    DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Self}}"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Element.Reveal.TrueTask.Discipline.Schedule.BuildSchedule"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:control="using:WinAppLibrary.Controls"
+    xmlns:ui="using:Element.Reveal.TrueTask.Lib.UI"
+    xmlns:appui="using:WinAppLibrary.UI"
+    mc:Ignorable="d">
+    <appui:CWP x:Name="cwplist" BackClick="cwplist_BackClick" SelectionChanged="cwplist_SelectionChanged"></appui:CWP>
+</control:LayoutAwarePage>
